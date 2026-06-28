@@ -136,7 +136,7 @@ If you use this repository, please cite:
   author    = {Izavan dos S. Correia and Henrique C. T. Santos and Tiago A. E. Ferreira},
   title     = {IzavanCorreia/loop-parallelizability-classifier: Initial Release},
   year      = {2026},
-  version   = {v1.1.0},
+  version   = {v1.1.1},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.21013787},
   url       = {https://doi.org/10.5281/zenodo.21013787}
