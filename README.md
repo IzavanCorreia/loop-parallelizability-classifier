@@ -109,7 +109,7 @@ The script automatically executes the complete pipeline:
 
 Archived repository version:
 
-[INSERT ZENODO REPOSITORY LINK HERE]
+https://doi.org/10.5281/zenodo.21013788
 
 ---
 
@@ -132,12 +132,14 @@ If you use this repository, please cite:
 ### Zenodo Repository
 
 ```bibtex
-@dataset{correia2026loop_parallelizability_classifier,
+@software{correia2026loop_parallelizability_classifier,
   author    = {Izavan dos S. Correia and Henrique C. T. Santos and Tiago A. E. Ferreira},
-  title     = {Automatic Loop Parallelizability Classification via Contextual Code Representations: An Intelligent Code Analysis System with Stability and Low False Positive Rate},
+  title     = {IzavanCorreia/loop-parallelizability-classifier: Initial Release},
   year      = {2026},
+  version   = {v1.0.0},
   publisher = {Zenodo},
-  doi       = {[INSERT ZENODO DOI HERE]}
+  doi       = {10.5281/zenodo.21013788},
+  url       = {https://doi.org/10.5281/zenodo.21013788}
 }
 ```
 
