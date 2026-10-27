@@ -1,0 +1,30 @@
+[
+  {
+    "rule": "literal-on-RHS rule",
+    "label_en": "Rule: no literal on the right-hand side $\\rightarrow$ U",
+    "label_pt": "Regra: sem literal no lado direito $\\rightarrow$ U",
+    "accuracy": 0.5,
+    "fpr": 0.984
+  },
+  {
+    "rule": "has '+=' -> Undefined",
+    "label_en": "Rule: contains \\texttt{+=} $\\rightarrow$ U",
+    "label_pt": "Regra: cont\u00e9m \\texttt{+=} $\\rightarrow$ U",
+    "accuracy": 0.519125,
+    "fpr": 0.77775
+  },
+  {
+    "rule": "has 'break' -> Undefined",
+    "label_en": "Rule: contains \\texttt{break} $\\rightarrow$ U",
+    "label_pt": "Regra: cont\u00e9m \\texttt{break} $\\rightarrow$ U",
+    "accuracy": 0.5555,
+    "fpr": 0.889
+  },
+  {
+    "rule": "longer than median -> Undefined",
+    "label_en": "Rule: longer than the median $\\rightarrow$ U",
+    "label_pt": "Regra: mais longo que a mediana $\\rightarrow$ U",
+    "accuracy": 0.500625,
+    "fpr": 0.5015
+  }
+]

@@ -1,0 +1,181 @@
+setting,model,category,label,n,correct
+(a) synthetic only -> real,CNN,comprehension (map),Parallelizable,40,0.5583333333333333
+(a) synthetic only -> real,CNN,container element shared between iterations,Undefined,8,0.5416666666666666
+(a) synthetic only -> real,CNN,"explicit loop, map with append",Parallelizable,133,0.5839598997493735
+(a) synthetic only -> real,CNN,"explicit loop, writes to own position",Parallelizable,2,0.5
+(a) synthetic only -> real,CNN,not executed (side effects),Parallelizable,1,0.6666666666666666
+(a) synthetic only -> real,CNN,output list read inside the loop,Undefined,16,0.3333333333333333
+(a) synthetic only -> real,CNN,recursion (no loop statement),Undefined,2,0.3333333333333333
+(a) synthetic only -> real,CNN,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.4562841530054645
+(a) synthetic only -> real,CNN,value used after the loop (live-out),Undefined,13,0.4358974358974359
+(a) synthetic only -> real,CNN,while loop,Undefined,3,0.3333333333333333
+(a) synthetic only -> real,DNN,comprehension (map),Parallelizable,40,0.5166666666666667
+(a) synthetic only -> real,DNN,container element shared between iterations,Undefined,8,0.4583333333333333
+(a) synthetic only -> real,DNN,"explicit loop, map with append",Parallelizable,133,0.5689223057644109
+(a) synthetic only -> real,DNN,"explicit loop, writes to own position",Parallelizable,2,0.6666666666666666
+(a) synthetic only -> real,DNN,not executed (side effects),Parallelizable,1,0.6666666666666666
+(a) synthetic only -> real,DNN,output list read inside the loop,Undefined,16,0.3958333333333333
+(a) synthetic only -> real,DNN,recursion (no loop statement),Undefined,2,0.3333333333333333
+(a) synthetic only -> real,DNN,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.4726775956284153
+(a) synthetic only -> real,DNN,value used after the loop (live-out),Undefined,13,0.4358974358974359
+(a) synthetic only -> real,DNN,while loop,Undefined,3,0.6666666666666666
+(a) synthetic only -> real,DistilBERT,comprehension (map),Parallelizable,40,0.6833333333333332
+(a) synthetic only -> real,DistilBERT,container element shared between iterations,Undefined,8,0.5833333333333334
+(a) synthetic only -> real,DistilBERT,"explicit loop, map with append",Parallelizable,133,0.48370927318295737
+(a) synthetic only -> real,DistilBERT,"explicit loop, writes to own position",Parallelizable,2,0.8333333333333334
+(a) synthetic only -> real,DistilBERT,not executed (side effects),Parallelizable,1,0.3333333333333333
+(a) synthetic only -> real,DistilBERT,output list read inside the loop,Undefined,16,0.5416666666666666
+(a) synthetic only -> real,DistilBERT,recursion (no loop statement),Undefined,2,0.3333333333333333
+(a) synthetic only -> real,DistilBERT,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.6256830601092896
+(a) synthetic only -> real,DistilBERT,value used after the loop (live-out),Undefined,13,0.5897435897435898
+(a) synthetic only -> real,DistilBERT,while loop,Undefined,3,0.5555555555555555
+(a) synthetic only -> real,Linear SVM,comprehension (map),Parallelizable,40,0.125
+(a) synthetic only -> real,Linear SVM,container element shared between iterations,Undefined,8,0.625
+(a) synthetic only -> real,Linear SVM,"explicit loop, map with append",Parallelizable,133,0.03759398496240601
+(a) synthetic only -> real,Linear SVM,"explicit loop, writes to own position",Parallelizable,2,0.0
+(a) synthetic only -> real,Linear SVM,not executed (side effects),Parallelizable,1,0.0
+(a) synthetic only -> real,Linear SVM,output list read inside the loop,Undefined,16,0.875
+(a) synthetic only -> real,Linear SVM,recursion (no loop statement),Undefined,2,1.0
+(a) synthetic only -> real,Linear SVM,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.8114754098360656
+(a) synthetic only -> real,Linear SVM,value used after the loop (live-out),Undefined,13,0.923076923076923
+(a) synthetic only -> real,Linear SVM,while loop,Undefined,3,1.0
+(a) synthetic only -> real,Logistic regression,comprehension (map),Parallelizable,40,0.17499999999999996
+(a) synthetic only -> real,Logistic regression,container element shared between iterations,Undefined,8,0.375
+(a) synthetic only -> real,Logistic regression,"explicit loop, map with append",Parallelizable,133,0.11278195488721804
+(a) synthetic only -> real,Logistic regression,"explicit loop, writes to own position",Parallelizable,2,0.0
+(a) synthetic only -> real,Logistic regression,not executed (side effects),Parallelizable,1,0.0
+(a) synthetic only -> real,Logistic regression,output list read inside the loop,Undefined,16,0.75
+(a) synthetic only -> real,Logistic regression,recursion (no loop statement),Undefined,2,1.0
+(a) synthetic only -> real,Logistic regression,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.6639344262295082
+(a) synthetic only -> real,Logistic regression,value used after the loop (live-out),Undefined,13,0.5384615384615384
+(a) synthetic only -> real,Logistic regression,while loop,Undefined,3,0.3333333333333333
+(a) synthetic only -> real,N-gram LR,comprehension (map),Parallelizable,40,0.575
+(a) synthetic only -> real,N-gram LR,container element shared between iterations,Undefined,8,0.375
+(a) synthetic only -> real,N-gram LR,"explicit loop, map with append",Parallelizable,133,0.2781954887218045
+(a) synthetic only -> real,N-gram LR,"explicit loop, writes to own position",Parallelizable,2,0.5
+(a) synthetic only -> real,N-gram LR,not executed (side effects),Parallelizable,1,0.0
+(a) synthetic only -> real,N-gram LR,output list read inside the loop,Undefined,16,0.6875
+(a) synthetic only -> real,N-gram LR,recursion (no loop statement),Undefined,2,1.0
+(a) synthetic only -> real,N-gram LR,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.7622950819672131
+(a) synthetic only -> real,N-gram LR,value used after the loop (live-out),Undefined,13,0.7692307692307693
+(a) synthetic only -> real,N-gram LR,while loop,Undefined,3,1.0
+"(b) hybrid, real test samples",CNN,comprehension (map),Parallelizable,40,0.725
+"(b) hybrid, real test samples",CNN,container element shared between iterations,Undefined,8,0.7083333333333334
+"(b) hybrid, real test samples",CNN,"explicit loop, map with append",Parallelizable,133,0.7167919799498746
+"(b) hybrid, real test samples",CNN,"explicit loop, writes to own position",Parallelizable,2,0.16666666666666666
+"(b) hybrid, real test samples",CNN,not executed (side effects),Parallelizable,1,0.6666666666666666
+"(b) hybrid, real test samples",CNN,output list read inside the loop,Undefined,16,0.4375
+"(b) hybrid, real test samples",CNN,recursion (no loop statement),Undefined,2,0.16666666666666666
+"(b) hybrid, real test samples",CNN,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.42896174863387976
+"(b) hybrid, real test samples",CNN,value used after the loop (live-out),Undefined,13,0.4871794871794872
+"(b) hybrid, real test samples",CNN,while loop,Undefined,3,0.6666666666666666
+"(b) hybrid, real test samples",DNN,comprehension (map),Parallelizable,40,0.6
+"(b) hybrid, real test samples",DNN,container element shared between iterations,Undefined,8,0.75
+"(b) hybrid, real test samples",DNN,"explicit loop, map with append",Parallelizable,133,0.5714285714285715
+"(b) hybrid, real test samples",DNN,"explicit loop, writes to own position",Parallelizable,2,0.0
+"(b) hybrid, real test samples",DNN,not executed (side effects),Parallelizable,1,1.0
+"(b) hybrid, real test samples",DNN,output list read inside the loop,Undefined,16,0.7083333333333334
+"(b) hybrid, real test samples",DNN,recursion (no loop statement),Undefined,2,0.3333333333333333
+"(b) hybrid, real test samples",DNN,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.6612021857923497
+"(b) hybrid, real test samples",DNN,value used after the loop (live-out),Undefined,13,0.8461538461538461
+"(b) hybrid, real test samples",DNN,while loop,Undefined,3,1.0
+"(b) hybrid, real test samples",DistilBERT,comprehension (map),Parallelizable,40,0.9666666666666667
+"(b) hybrid, real test samples",DistilBERT,container element shared between iterations,Undefined,8,0.625
+"(b) hybrid, real test samples",DistilBERT,"explicit loop, map with append",Parallelizable,133,0.8872180451127819
+"(b) hybrid, real test samples",DistilBERT,"explicit loop, writes to own position",Parallelizable,2,1.0
+"(b) hybrid, real test samples",DistilBERT,not executed (side effects),Parallelizable,1,1.0
+"(b) hybrid, real test samples",DistilBERT,output list read inside the loop,Undefined,16,0.6666666666666666
+"(b) hybrid, real test samples",DistilBERT,recursion (no loop statement),Undefined,2,0.6666666666666666
+"(b) hybrid, real test samples",DistilBERT,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.8852459016393442
+"(b) hybrid, real test samples",DistilBERT,value used after the loop (live-out),Undefined,13,0.9487179487179488
+"(b) hybrid, real test samples",DistilBERT,while loop,Undefined,3,0.4444444444444444
+"(b) hybrid, real test samples",Linear SVM,comprehension (map),Parallelizable,40,0.7999999999999999
+"(b) hybrid, real test samples",Linear SVM,container element shared between iterations,Undefined,8,0.4583333333333333
+"(b) hybrid, real test samples",Linear SVM,"explicit loop, map with append",Parallelizable,133,0.7744360902255639
+"(b) hybrid, real test samples",Linear SVM,"explicit loop, writes to own position",Parallelizable,2,0.3333333333333333
+"(b) hybrid, real test samples",Linear SVM,not executed (side effects),Parallelizable,1,1.0
+"(b) hybrid, real test samples",Linear SVM,output list read inside the loop,Undefined,16,0.5
+"(b) hybrid, real test samples",Linear SVM,recursion (no loop statement),Undefined,2,0.0
+"(b) hybrid, real test samples",Linear SVM,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.5546448087431695
+"(b) hybrid, real test samples",Linear SVM,value used after the loop (live-out),Undefined,13,0.5897435897435898
+"(b) hybrid, real test samples",Linear SVM,while loop,Undefined,3,0.6666666666666666
+"(b) hybrid, real test samples",Logistic regression,comprehension (map),Parallelizable,40,0.85
+"(b) hybrid, real test samples",Logistic regression,container element shared between iterations,Undefined,8,0.4583333333333333
+"(b) hybrid, real test samples",Logistic regression,"explicit loop, map with append",Parallelizable,133,0.7669172932330827
+"(b) hybrid, real test samples",Logistic regression,"explicit loop, writes to own position",Parallelizable,2,0.5
+"(b) hybrid, real test samples",Logistic regression,not executed (side effects),Parallelizable,1,1.0
+"(b) hybrid, real test samples",Logistic regression,output list read inside the loop,Undefined,16,0.5208333333333334
+"(b) hybrid, real test samples",Logistic regression,recursion (no loop statement),Undefined,2,0.0
+"(b) hybrid, real test samples",Logistic regression,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.5163934426229508
+"(b) hybrid, real test samples",Logistic regression,value used after the loop (live-out),Undefined,13,0.5897435897435898
+"(b) hybrid, real test samples",Logistic regression,while loop,Undefined,3,0.6666666666666666
+"(b) hybrid, real test samples",N-gram LR,comprehension (map),Parallelizable,40,1.0
+"(b) hybrid, real test samples",N-gram LR,container element shared between iterations,Undefined,8,0.75
+"(b) hybrid, real test samples",N-gram LR,"explicit loop, map with append",Parallelizable,133,0.837092731829574
+"(b) hybrid, real test samples",N-gram LR,"explicit loop, writes to own position",Parallelizable,2,0.5
+"(b) hybrid, real test samples",N-gram LR,not executed (side effects),Parallelizable,1,0.6666666666666666
+"(b) hybrid, real test samples",N-gram LR,output list read inside the loop,Undefined,16,0.8541666666666666
+"(b) hybrid, real test samples",N-gram LR,recursion (no loop statement),Undefined,2,1.0
+"(b) hybrid, real test samples",N-gram LR,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.7349726775956285
+"(b) hybrid, real test samples",N-gram LR,value used after the loop (live-out),Undefined,13,0.8974358974358975
+"(b) hybrid, real test samples",N-gram LR,while loop,Undefined,3,1.0
+(c) real only,CNN,comprehension (map),Parallelizable,40,0.8416666666666667
+(c) real only,CNN,container element shared between iterations,Undefined,8,0.7083333333333334
+(c) real only,CNN,"explicit loop, map with append",Parallelizable,133,0.8872180451127819
+(c) real only,CNN,"explicit loop, writes to own position",Parallelizable,2,0.3333333333333333
+(c) real only,CNN,not executed (side effects),Parallelizable,1,1.0
+(c) real only,CNN,output list read inside the loop,Undefined,16,0.3333333333333333
+(c) real only,CNN,recursion (no loop statement),Undefined,2,0.5
+(c) real only,CNN,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.3825136612021858
+(c) real only,CNN,value used after the loop (live-out),Undefined,13,0.4358974358974359
+(c) real only,CNN,while loop,Undefined,3,0.6666666666666666
+(c) real only,DNN,comprehension (map),Parallelizable,40,0.875
+(c) real only,DNN,container element shared between iterations,Undefined,8,0.7083333333333334
+(c) real only,DNN,"explicit loop, map with append",Parallelizable,133,0.9323308270676692
+(c) real only,DNN,"explicit loop, writes to own position",Parallelizable,2,0.5
+(c) real only,DNN,not executed (side effects),Parallelizable,1,1.0
+(c) real only,DNN,output list read inside the loop,Undefined,16,0.16666666666666666
+(c) real only,DNN,recursion (no loop statement),Undefined,2,0.3333333333333333
+(c) real only,DNN,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.2841530054644809
+(c) real only,DNN,value used after the loop (live-out),Undefined,13,0.3076923076923077
+(c) real only,DNN,while loop,Undefined,3,0.4444444444444444
+(c) real only,DistilBERT,comprehension (map),Parallelizable,40,0.9916666666666667
+(c) real only,DistilBERT,container element shared between iterations,Undefined,8,0.7916666666666666
+(c) real only,DistilBERT,"explicit loop, map with append",Parallelizable,133,0.8822055137844611
+(c) real only,DistilBERT,"explicit loop, writes to own position",Parallelizable,2,0.3333333333333333
+(c) real only,DistilBERT,not executed (side effects),Parallelizable,1,1.0
+(c) real only,DistilBERT,output list read inside the loop,Undefined,16,0.7916666666666666
+(c) real only,DistilBERT,recursion (no loop statement),Undefined,2,1.0
+(c) real only,DistilBERT,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.953551912568306
+(c) real only,DistilBERT,value used after the loop (live-out),Undefined,13,0.9487179487179488
+(c) real only,DistilBERT,while loop,Undefined,3,1.0
+(c) real only,Linear SVM,comprehension (map),Parallelizable,40,0.85
+(c) real only,Linear SVM,container element shared between iterations,Undefined,8,0.5
+(c) real only,Linear SVM,"explicit loop, map with append",Parallelizable,133,0.9298245614035087
+(c) real only,Linear SVM,"explicit loop, writes to own position",Parallelizable,2,0.6666666666666666
+(c) real only,Linear SVM,not executed (side effects),Parallelizable,1,1.0
+(c) real only,Linear SVM,output list read inside the loop,Undefined,16,0.20833333333333334
+(c) real only,Linear SVM,recursion (no loop statement),Undefined,2,0.16666666666666666
+(c) real only,Linear SVM,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.2923497267759563
+(c) real only,Linear SVM,value used after the loop (live-out),Undefined,13,0.38461538461538464
+(c) real only,Linear SVM,while loop,Undefined,3,0.5555555555555555
+(c) real only,Logistic regression,comprehension (map),Parallelizable,40,0.8833333333333333
+(c) real only,Logistic regression,container element shared between iterations,Undefined,8,0.5416666666666666
+(c) real only,Logistic regression,"explicit loop, map with append",Parallelizable,133,0.9423558897243107
+(c) real only,Logistic regression,"explicit loop, writes to own position",Parallelizable,2,0.6666666666666666
+(c) real only,Logistic regression,not executed (side effects),Parallelizable,1,1.0
+(c) real only,Logistic regression,output list read inside the loop,Undefined,16,0.25
+(c) real only,Logistic regression,recursion (no loop statement),Undefined,2,0.16666666666666666
+(c) real only,Logistic regression,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.29508196721311475
+(c) real only,Logistic regression,value used after the loop (live-out),Undefined,13,0.35897435897435903
+(c) real only,Logistic regression,while loop,Undefined,3,0.4444444444444444
+(c) real only,N-gram LR,comprehension (map),Parallelizable,40,0.9833333333333334
+(c) real only,N-gram LR,container element shared between iterations,Undefined,8,0.875
+(c) real only,N-gram LR,"explicit loop, map with append",Parallelizable,133,0.8771929824561404
+(c) real only,N-gram LR,"explicit loop, writes to own position",Parallelizable,2,0.5
+(c) real only,N-gram LR,not executed (side effects),Parallelizable,1,1.0
+(c) real only,N-gram LR,output list read inside the loop,Undefined,16,0.875
+(c) real only,N-gram LR,recursion (no loop statement),Undefined,2,0.6666666666666666
+(c) real only,N-gram LR,scalar carried between iterations (accumulator/recurrence),Undefined,122,0.7513661202185792
+(c) real only,N-gram LR,value used after the loop (live-out),Undefined,13,0.9743589743589745
+(c) real only,N-gram LR,while loop,Undefined,3,0.8888888888888888

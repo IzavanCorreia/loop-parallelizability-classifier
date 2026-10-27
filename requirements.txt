@@ -1,0 +1,12 @@
+# Versions used in the experiments (Python 3.12). PyTorch was the CUDA 12.4 build for DistilBERT;
+# the CPU build is enough for the other models.
+torch==2.5.1
+transformers==4.49.0
+tokenizers==0.21.4
+accelerate==1.5.1
+scikit-learn==1.6.1
+numpy==2.2.3
+pandas==2.2.3
+scipy==1.18.1
+deap==1.4.1
+matplotlib==3.11.2

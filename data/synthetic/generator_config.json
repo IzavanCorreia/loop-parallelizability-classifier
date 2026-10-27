@@ -1,0 +1,11 @@
+{
+  "out": "data/synthetic",
+  "pop": 10000,
+  "ngen": 50,
+  "cxpb": 0.9,
+  "mutpb": 0.1,
+  "pairs": 4000,
+  "seed": 42,
+  "archive_cap": 3000,
+  "workers": 14
+}

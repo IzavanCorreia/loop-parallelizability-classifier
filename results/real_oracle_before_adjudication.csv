@@ -1,0 +1,2460 @@
+class,index,oracle,reason,code
+Parallelizable,1,Parallelizable,no cross-iteration dependence observed,"def gerar_nomes_arquivos(n):
+    arquivos = []
+    tamanhoMax = 100
+    for i in range(tamanhoMax):
+        nome = f""relatorio_{i:03d}.pdf""
+        arquivos.append(nome)
+    return arquivos"
+Parallelizable,2,Parallelizable,no cross-iteration dependence observed,"import math
+
+def calcular_valores_sensores(n):
+    leituras = []
+    for i in range(50):
+        valor = round(math.sin(i * 0.1) * 100, 2)
+        leituras.append(valor)
+    return leituras"
+Parallelizable,3,Parallelizable,no cross-iteration dependence observed,"def gerar_cores(n):
+    cores = []
+    for i in range(50):
+        r = (i * 37) % 256
+        g = (i * 73) % 256
+        b = (i * 113) % 256
+        cores.append((r, g, b))
+    return cores"
+Parallelizable,4,Parallelizable,no cross-iteration dependence observed,"def construir_linhas_csv(n):
+    linhas = []
+    tamanhoMax = 1000
+    for i in range(tamanhoMax):
+        linha = f""{i},Usuario_{i},usuario{i}@exemplo.com""
+        linhas.append(linha)
+    return linhas"
+Parallelizable,5,Parallelizable,no cross-iteration dependence observed,"import random
+
+def simular_respostas(n):
+    respostas = []
+    for i in range(50):
+        tempo = random.randint(80, 300)  # tempo entre 80ms e 300ms
+        respostas.append(tempo)
+    return respostas"
+Parallelizable,6,Parallelizable,no cross-iteration dependence observed,"import random
+import string
+
+def gerar_senhas(n):
+    senhas = []
+    for i in range(50):
+        tamanho = random.randint(8, 12)
+        caracteres = string.ascii_letters + string.digits + ""!@#$%""
+        senha = ''.join(random.choice(caracteres) for _ in range(tamanho))
+        senhas.append(senha)
+    return senhas"
+Parallelizable,7,Parallelizable,no cross-iteration dependence observed,"import random
+
+def simular_temperaturas(n=50):
+    temperaturas = []
+    for i in range(n):
+        temp = round(random.uniform(15.0, 35.0), 1)
+        temperaturas.append(temp)
+    return temperaturas"
+Parallelizable,8,Parallelizable,no cross-iteration dependence observed,"import uuid
+
+def gerar_transacoes(n):
+    transacoes = []
+    for i in range(50):
+        transacao_id = str(uuid.uuid4())
+        transacoes.append(transacao_id)
+    return transacoes"
+Parallelizable,9,Parallelizable,no cross-iteration dependence observed,"def gerar_miniaturas(n):
+    miniaturas = []
+    for i in range(50):
+        resolucao = f""160x120-{i}""
+        miniaturas.append(resolucao)
+    return miniaturas"
+Parallelizable,10,Parallelizable,no cross-iteration dependence observed,"import random
+
+def gerar_coordenadas(n):
+    coordenadas = []
+    for i in range(n):
+        lat = round(random.uniform(-90.0, 90.0), 6)
+        lon = round(random.uniform(-180.0, 180.0), 6)
+        coordenadas.append((lat, lon))
+    return coordenadas"
+Parallelizable,11,Parallelizable,no cross-iteration dependence observed,"import random
+import string
+import math
+
+def gerar_nomes_imagens(n):
+    imagens = []
+    for i in range(n):
+        nome = f""imagem_{i:04d}.png""
+        imagens.append(nome)
+    return imagens"
+Parallelizable,12,Parallelizable,no cross-iteration dependence observed,"def gerar_numeros_aleatorios(n):
+    numeros = []
+    for i in range(n):
+        numeros.append(random.randint(1, 100))
+    return numeros"
+Parallelizable,13,Parallelizable,no cross-iteration dependence observed,"def converter_para_binario(n):
+    binarios = []
+    for i in range(n):
+        binarios.append(bin(i)[2:])
+    return binarios"
+Parallelizable,14,Parallelizable,no cross-iteration dependence observed,"def gerar_combinacoes_rgb(n):
+    cores = []
+    for i in range(n):
+        r = (i * 5) % 256
+        g = (i * 10) % 256
+        b = (i * 15) % 256
+        cores.append((r, g, b))
+    return cores"
+Parallelizable,15,Parallelizable,no cross-iteration dependence observed,"def calcular_quadrados(n):
+    quadrados = []
+    for i in range(n):
+        quadrados.append(i ** 2)
+    return quadrados"
+Parallelizable,16,Parallelizable,no cross-iteration dependence observed,"def gerar_codigos(n):
+    codigos = []
+    for i in range(n):
+        codigo = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+        codigos.append(codigo)
+    return codigos"
+Parallelizable,17,Parallelizable,no cross-iteration dependence observed,"def calcular_angulo_em_graus(n):
+    angulos = []
+    for i in range(n):
+        rad = i * 0.1
+        grau = round(math.degrees(rad), 2)
+        angulos.append(grau)
+    return angulos"
+Parallelizable,18,Parallelizable,no cross-iteration dependence observed,"def gerar_datas_ficticias(n):
+    datas = []
+    for i in range(n):
+        dia = (i % 30) + 1
+        mes = (i % 12) + 1
+        ano = 2023
+        datas.append(f""{dia:02d}/{mes:02d}/{ano}"")
+    return datas"
+Parallelizable,19,Parallelizable,no cross-iteration dependence observed,"def criar_frases(n):
+    frases = []
+    for i in range(n):
+        frases.append(f""Este é o item número {i}."")
+    return frases"
+Parallelizable,20,Parallelizable,no cross-iteration dependence observed,"def gerar_booleanos(n):
+    valores = []
+    for i in range(n):
+        valores.append(i % 2 == 0)
+    return valores"
+Parallelizable,21,Parallelizable,no cross-iteration dependence observed,"def calcular_quadrados():
+    numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    quadrados = []
+    for num in numeros:
+        quadrados.append(num ** 2)
+    return quadrados"
+Parallelizable,22,Parallelizable,no cross-iteration dependence observed,"def calcular_quadrados_e_cubos():
+    resultados = []
+    for i in range(1, 11):  
+        quadrado = i ** 2
+        cubo = i ** 3
+        resultados.append((quadrado, cubo))
+    return resultados"
+Parallelizable,23,Parallelizable,no cross-iteration dependence observed,"def verificar_primos():
+    candidatos = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    primos = []
+    for num in candidatos:
+        is_primo = True
+        for i in range(2, int(num**0.5)+1):
+            if num % i == 0:
+                is_primo = False
+                break
+        primos.append(is_primo)
+    return primos"
+Parallelizable,24,Undefined,list appended to and read inside the loop,"def calcular_fatoriais():
+    fatoriais = [1]
+    for i in range(1, 10):
+        fatoriais.append(fatoriais[i-1] * i)
+    return fatoriais"
+Parallelizable,25,Parallelizable,no cross-iteration dependence observed,"def converter_para_binario():
+    numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    binarios = []
+    for num in numeros:
+        binarios.append(bin(num)[2:])
+    return binarios"
+Parallelizable,26,Parallelizable,no cross-iteration dependence observed,"def gerar_cores_hex():
+    import random
+    cores = []
+    for _ in range(10):
+        cores.append(f""#{random.randint(0, 0xFFFFFF):06x}"")
+    return cores"
+Parallelizable,27,Parallelizable,no cross-iteration dependence observed,"def simular_lancamentos_dados():
+    import random
+    resultados = []
+    for _ in range(20):
+        resultados.append(random.randint(1, 6))
+    return resultados"
+Parallelizable,28,Parallelizable,no cross-iteration dependence observed,"def calcular_raizes_quadradas():
+    import math
+    numeros = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+    raizes = []
+    for num in numeros:
+        raizes.append(math.sqrt(num))
+    return raizes"
+Parallelizable,29,Parallelizable,no cross-iteration dependence observed,"def gerar_emails():
+    dominio = ""exemplo.com""
+    usuarios = [""joao"", ""maria"", ""pedro"", ""ana""]
+    emails = []
+    for usuario in usuarios:
+        emails.append(f""{usuario}@{dominio}"")
+    return emails"
+Parallelizable,30,Parallelizable,no cross-iteration dependence observed,"def criar_matriz_identidade():
+    tamanho = 4
+    matriz = []
+    for i in range(tamanho):
+        linha = [0] * tamanho
+        linha[i] = 1
+        matriz.append(linha)
+    return matriz"
+Parallelizable,31,Parallelizable,no cross-iteration dependence observed,"def calcular_potencias():
+    base = 2
+    expoentes = [0, 1, 2, 3, 4, 5]
+    potencias = []
+    for exp in expoentes:
+        potencias.append(base ** exp)
+    return potencias"
+Parallelizable,32,Parallelizable,no cross-iteration dependence observed,"def gerar_coordenadas_aleatorias():
+    import random
+    coordenadas = []
+    for _ in range(5):
+        coordenadas.append((random.random(), random.random()))
+    return coordenadas"
+Parallelizable,33,Parallelizable,no cross-iteration dependence observed,"def criar_dicionario_numeros():
+    chaves = ['a', 'b', 'c', 'd']
+    valores = [1, 2, 3, 4]
+    dicionario = {}
+    for chave, valor in zip(chaves, valores):
+        dicionario[chave] = valor
+    return dicionario"
+Parallelizable,34,Parallelizable,no cross-iteration dependence observed,"def simular_temperaturas():
+    import random
+    temperaturas = []
+    for _ in range(24):
+        temperaturas.append(round(random.gauss(25, 5), 1))
+    return temperaturas"
+Parallelizable,35,Parallelizable,no cross-iteration dependence observed,"def calcular_senos():
+    import math
+    angulos = [0, 30, 45, 60, 90]
+    senos = []
+    for ang in angulos:
+        rad = math.radians(ang)
+        senos.append(round(math.sin(rad), 4))
+    return senos"
+Parallelizable,36,Parallelizable,no cross-iteration dependence observed,"def gerar_hashes():
+    import hashlib
+    textos = [""senha1"", ""segredo"", ""123456""]
+    hashes = []
+    for texto in textos:
+        hashes.append(hashlib.md5(texto.encode()).hexdigest())
+    return hashes"
+Parallelizable,37,Parallelizable,no cross-iteration dependence observed,"def criar_lista_palavras():
+    import random
+    import string
+    palavras = []
+    for _ in range(5):
+        palavra = ''.join(random.choice(string.ascii_lowercase) for _ in range(6))
+        palavras.append(palavra)
+    return palavras"
+Parallelizable,38,Parallelizable,no cross-iteration dependence observed,"def calcular_medias_isoladas():
+    dados = [10, 20, 30, 40, 50]
+    medias = []
+    for num in dados:
+        medias.append(num / 2) 
+    return medias"
+Parallelizable,39,Parallelizable,no cross-iteration dependence observed,"def verificar_palindromos():
+    palavras = [""ovo"", ""python"", ""reviver"", ""casa""]
+    resultados = []
+    for palavra in palavras:
+        resultados.append(palavra == palavra[::-1])
+    return resultados"
+Parallelizable,40,Parallelizable,no cross-iteration dependence observed,"def gerar_progressao_aritmetica():
+    a1 = 5
+    r = 3
+    termos = []
+    for i in range(10):
+        termos.append(a1 + i * r)
+    return termos"
+Parallelizable,41,Parallelizable,no cross-iteration dependence observed,"def calcular_distancia_origem():
+    import math
+    pontos = [(1,1), (2,2), (3,4), (5,5)]
+    distancias = []
+    for (x, y) in pontos:
+        distancias.append(round(math.sqrt(x**2 + y**2), 2))
+    return distancias"
+Parallelizable,42,Parallelizable,no cross-iteration dependence observed,"def criar_sequencia_alternada():
+    sequencia = []
+    for i in range(10):
+        sequencia.append((-1)**i)
+    return sequencia"
+Parallelizable,43,Parallelizable,no cross-iteration dependence observed,"def gerar_nomes_aleatorios():
+    import random
+    nomes = []
+    primeiros = [""Ana"", ""João"", ""Maria"", ""Pedro""]
+    sobrenomes = [""Silva"", ""Santos"", ""Oliveira"", ""Souza""]
+    for _ in range(5):
+        nomes.append(f""{random.choice(primeiros)} {random.choice(sobrenomes)}"")
+    return nomes"
+Parallelizable,44,Parallelizable,no cross-iteration dependence observed,"def calcular_dobro_e_triplo():
+    numeros = [1, 2, 3, 4, 5]
+    resultados = []
+    for num in numeros:
+        resultados.append((num*2, num*3))  
+    return resultados"
+Parallelizable,45,Parallelizable,no cross-iteration dependence observed,"def converter_para_fahrenheit():
+    temperaturas_c = [0, 10, 20, 30, 40]
+    fahrenheit = []
+    for tc in temperaturas_c:
+        fahrenheit.append(round((tc * 9/5) + 32, 1))
+    return fahrenheit"
+Parallelizable,46,Parallelizable,no cross-iteration dependence observed,"def gerar_permutacoes():
+    import random
+    lista_original = [1, 2, 3]
+    permutacoes = []
+    for _ in range(3):
+        copia = lista_original.copy()
+        random.shuffle(copia)
+        permutacoes.append(copia)
+    return permutacoes"
+Parallelizable,47,Parallelizable,no cross-iteration dependence observed,"def calcular_velocidade_media():
+    distancias = [100, 200, 150, 300]
+    tempos = [2, 4, 3, 5]
+    velocidades = []
+    for d, t in zip(distancias, tempos):
+        velocidades.append(round(d / t, 2))
+    return velocidades"
+Parallelizable,48,n/a,imports outside the allow-list,"def criar_arquivos_temporarios():
+    import tempfile
+    arquivos = []
+    for _ in range(3):
+        arquivos.append(tempfile.NamedTemporaryFile(delete=False).name)
+    return arquivos"
+Parallelizable,49,Parallelizable,no cross-iteration dependence observed,"def simular_crescimento_populacional():
+    populacoes = []
+    taxas = [0.01, 0.02, 0.03]
+    pop_inicial = 1000
+    anos = 5
+    for taxa in taxas:
+        pop = pop_inicial
+        for _ in range(anos):
+            pop *= (1 + taxa)
+        populacoes.append(round(pop))
+    return populacoes"
+Parallelizable,50,Parallelizable,no cross-iteration dependence observed,"def gerar_uuid():
+    import uuid
+    uuids = []
+    for _ in range(5):
+        uuids.append(str(uuid.uuid4()))
+    return uuids"
+Parallelizable,51,Parallelizable,no cross-iteration dependence observed,"def converter_para_grayscale():
+    import numpy as np
+    imagem = np.random.randint(0, 256, (100, 100, 3), dtype=np.uint8)
+    gray = np.zeros((100, 100))
+    for i in range(100):
+        r, g, b = imagem[i, 50] 
+        gray[i, 50] = 0.2989*r + 0.5870*g + 0.1140*b
+    return gray"
+Parallelizable,52,Parallelizable,no cross-iteration dependence observed,"def calcular_estatisticas():
+    dados = [2.3, 4.5, 1.2, 6.7, 3.4]
+    stats = []
+    for valor in dados:
+        stats.append((valor, valor**2, valor**0.5))  
+    return stats"
+Parallelizable,53,Parallelizable,no cross-iteration dependence observed,"def contar_caracteres():
+    textos = [""Python"", ""Paralelismo"", ""Processamento""]
+    contagens = []
+    for texto in textos:
+        contagens.append((texto, len(texto)))
+    return contagens"
+Parallelizable,54,Parallelizable,no cross-iteration dependence observed,"def simular_dados():
+    import random
+    resultados = []
+    for _ in range(1000):
+        resultados.append(random.randint(1, 6))
+    return sum(resultados)/len(resultados)"
+Parallelizable,55,Parallelizable,no cross-iteration dependence observed,"def gerar_senhas():
+    import random
+    import string
+    senhas = []
+    for _ in range(5):
+        senha = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(8))
+        senhas.append(senha)
+    return senhas"
+Parallelizable,56,Parallelizable,no cross-iteration dependence observed,"def converter_temperaturas():
+    temps_c = [0, 10, 20, 30, 40]
+    temps_f = []
+    for tc in temps_c:
+        temps_f.append(tc * 9/5 + 32)
+    return temps_f"
+Parallelizable,57,Parallelizable,no cross-iteration dependence observed,"def calcular_areas():
+    import math
+    raios = [1, 2, 3, 4, 5]
+    areas = []
+    for r in raios:
+        areas.append(math.pi * r**2)
+    return areas"
+Parallelizable,58,Parallelizable,no cross-iteration dependence observed,"def processar_compras():
+    itens = [(""maçã"", 2.5), (""leite"", 3.0), (""pão"", 4.2)]
+    totais = []
+    for item, preco in itens:
+        totais.append((item, preco * 1.1))  
+    return totais"
+Parallelizable,59,Parallelizable,no cross-iteration dependence observed,"def calcular_cubos():
+    numeros = [1, 2, 3, 4, 5]
+    resultados = []
+    for num in numeros:
+        resultados.append((num, num ** 3, num ** (1/3))) 
+    return resultados"
+Parallelizable,60,Parallelizable,no cross-iteration dependence observed,"def validar_emails():
+    emails = [""user@exemplo.com"", ""invalido"", ""outro@site.com""]
+    validos = []
+    for email in emails:
+        validos.append((""@"" in email and ""."" in email.split(""@"")[1]))
+    return validos"
+Parallelizable,61,Parallelizable,no cross-iteration dependence observed,"def calcular_fatoriais():
+    from math import factorial
+    numeros = [1, 2, 3, 4, 5, 6]
+    return [(n, factorial(n)) for n in numeros]"
+Parallelizable,62,Parallelizable,no cross-iteration dependence observed,"def converter_para_hexadecimal():
+    valores = [10, 15, 20, 255, 100]
+    return [(val, hex(val)) for val in valores]"
+Parallelizable,63,Parallelizable,no cross-iteration dependence observed,"def verificar_primos():
+    numeros = [2, 3, 4, 5, 7, 11, 13, 15]
+    return [(num, num > 1 and all(num % i != 0 for i in [2, 3, 5, 7])) for num in numeros]"
+Parallelizable,64,Parallelizable,no cross-iteration dependence observed,"def calcular_area_circulos():
+    raios = [1.0, 2.5, 3.0, 5.0]
+    return [(r, 3.14159 * r ** 2) for r in raios]"
+Parallelizable,65,Parallelizable,no cross-iteration dependence observed,"def processar_strings():
+    palavras = [""Python"", ""Código"", ""Exemplo"", ""Dados""]
+    return [(p, p.upper(), p.lower(), len(p)) for p in palavras]"
+Parallelizable,66,Parallelizable,no cross-iteration dependence observed,"def classificar_temperaturas():
+    temps = [20.5, 15.0, 30.2, 10.7, 25.0]
+    return [(t, ""Frio"" if t < 15 else ""Ameno"" if t < 25 else ""Quente"") for t in temps]"
+Parallelizable,67,Parallelizable,no cross-iteration dependence observed,"def calcular_descontos():
+    precos = [100.0, 50.0, 200.0, 75.0]
+    return [(p, p * 0.1 if p > 100 else p * 0.05, p * 0.9 if p > 100 else p * 0.95) for p in precos]"
+Parallelizable,68,Parallelizable,no cross-iteration dependence observed,"def calcular_fibonacci_posicoes():
+    posicoes = [5, 7, 10]
+    phi = (1 + 5**0.5) / 2
+    return [(n, int((phi**n - (-phi)**-n) / 5**0.5)) for n in posicoes]"
+Parallelizable,69,Parallelizable,no cross-iteration dependence observed,"def analisar_senhas():
+    senhas = [""senha123"", ""123456"", ""Segura@2023"", ""admin""]
+    return [(s, len(s) * (1 + (s.lower() != s) + (not s.isalnum()))) for s in senhas]"
+Parallelizable,70,Parallelizable,no cross-iteration dependence observed,"def converter_temperaturas():
+    celsius = [0.0, 25.0, 37.0, 100.0]
+    return [(c, c * 9/5 + 32, c + 273.15) for c in celsius]"
+Parallelizable,71,Parallelizable,no cross-iteration dependence observed,"def calcular_imc():
+    dados = [(70, 1.75), (85, 1.80), (60, 1.65)]
+    return [(p, a, p / a**2) for p, a in dados]"
+Parallelizable,72,Parallelizable,no cross-iteration dependence observed,"def verificar_palindromos():
+    palavras = [""radar"", ""python"", ""ovo"", ""casa""]
+    return [(p, p == p[::-1]) for p in palavras]"
+Parallelizable,73,Parallelizable,no cross-iteration dependence observed,"def calcular_juros_compostos():
+    investimentos = [(1000, 0.05, 5), (5000, 0.07, 10), (2000, 0.03, 3)]
+    return [(p, t, a, p * (1 + t)**a) for p, t, a in investimentos]"
+Parallelizable,74,Parallelizable,no cross-iteration dependence observed,"def processar_dados_sensor():
+    leituras = [23.5, 24.0, 22.8, 25.1, 21.9]
+    return [(l, (l - 20) / 10) for l in leituras]"
+Parallelizable,75,Parallelizable,no cross-iteration dependence observed,"def classificar_produtos():
+    produtos = [(""Notebook"", 2500), (""Celular"", 1200), (""Tablet"", 800)]
+    return [(n, p, ""Premium"" if p > 2000 else ""Intermediário"" if p > 1000 else ""Básico"") for n, p in produtos]"
+Parallelizable,76,Parallelizable,no cross-iteration dependence observed,"def calcular_velocidade_media():
+    dados = [(100, 2), (150, 3), (200, 4)]
+    return [(d, t, d/t) for d, t in dados]"
+Parallelizable,77,Parallelizable,no cross-iteration dependence observed,"def extrair_dominios():
+    emails = [""user@gmail.com"", ""admin@empresa.com"", ""contato@site.org""]
+    return [(e, e.split('@')[1]) for e in emails]"
+Parallelizable,78,Parallelizable,no cross-iteration dependence observed,"def calcular_consumo_energia():
+    dispositivos = [(""Geladeira"", 50, 24), (""TV"", 100, 5), (""Lâmpada"", 15, 10)]
+    return [(n, p * h / 1000) for n, p, h in dispositivos]"
+Parallelizable,79,Parallelizable,no cross-iteration dependence observed,"def converter_moedas():
+    valores = [100.0, 250.0, 50.0]
+    taxa = 5.20
+    return [(v, v / taxa) for v in valores]"
+Parallelizable,80,Parallelizable,no cross-iteration dependence observed,"def analisar_textos():
+    textos = [""Python é poderoso"", ""Data Science"", ""Machine Learning""]
+    return [(t, len(t.split()), len(t), len([c for c in t.lower() if c in 'aeiouáéíóúãõâêîôû'])) for t in textos]"
+Parallelizable,81,Parallelizable,no cross-iteration dependence observed,"def calcular_media_notas():
+    alunos = [(""João"", [8.5, 7.0, 9.0]), (""Maria"", [9.0, 9.5, 8.5])]
+    return [(n, sum(notas)/len(notas)) for n, notas in alunos]"
+Parallelizable,82,Parallelizable,no cross-iteration dependence observed,"def verificar_estoque():
+    produtos = [(""Caneta"", 50), (""Caderno"", 20), (""Borracha"", 100)]
+    return [(n, ""OK"" if q >= 30 else ""Repor"") for n, q in produtos]"
+Parallelizable,83,Parallelizable,no cross-iteration dependence observed,"def calcular_distancia_pontos():
+    pontos = [((0, 0), (3, 4)), ((1, 1), (4, 5)), ((2, 3), (5, 7))]
+    return [(p1, p2, ((p2[0]-p1[0])**2 + (p2[1]-p1[1])**2)**0.5) for p1, p2 in pontos]"
+Parallelizable,84,Parallelizable,no cross-iteration dependence observed,"def processar_logs():
+    logs = [""ERRO: Falha no sistema"", ""INFO: Usuário logado"", ""ERRO: Arquivo não encontrado""]
+    return [(l, l.split(':')[0]) for l in logs]"
+Parallelizable,85,Parallelizable,no cross-iteration dependence observed,"def calcular_volumes():
+    dados = [(""Cubo"", 3), (""Esfera"", 2), (""Cilindro"", 5)]
+    return [(n, 3**3 if n == ""Cubo"" else (4/3)*3.14159*2**3 if n == ""Esfera"" else 3.14159*5**2*5) for n, v in dados]"
+Parallelizable,86,Parallelizable,no cross-iteration dependence observed,"def classificar_idades():
+    idades = [12, 25, 7, 19, 30, 5]
+    return [(i, ""Criança"" if i < 13 else ""Adolescente"" if i < 20 else ""Adulto"" if i < 60 else ""Idoso"") for i in idades]"
+Parallelizable,87,Parallelizable,no cross-iteration dependence observed,"def calcular_potencia_eletrica():
+    dados = [(110, 10), (220, 5), (110, 15)]
+    return [(v, a, v * a) for v, a in dados]"
+Parallelizable,88,Parallelizable,no cross-iteration dependence observed,"def extrair_metadados_arquivos():
+    arquivos = [""relatorio.pdf"", ""imagem.jpg"", ""planilha.xlsx""]
+    return [(a.split('.')[0], a.split('.')[1], a.split('.')[1].upper()) for a in arquivos]"
+Parallelizable,89,Parallelizable,no cross-iteration dependence observed,"def calcular_combustivel_viagem():
+    viagens = [(300, 12), (150, 10), (450, 15)]
+    return [(d, c, d/c) for d, c in viagens]"
+Parallelizable,90,Parallelizable,no cross-iteration dependence observed,"def gerar_hashes_simples():
+    strings = [""senha"", ""123456"", ""secreto""]
+    return [(s, sum(ord(c) for c in s) % 1000) for s in strings]"
+Parallelizable,91,Parallelizable,no cross-iteration dependence observed,"def calcular_quadrados_perfeitos():
+    numeros = [4, 9, 16, 25, 36]
+    return [(n, int(n**0.5)) for n in numeros]"
+Parallelizable,92,Parallelizable,no cross-iteration dependence observed,"def verificar_anagramas():
+    palavras = [""amor"", ""roma"", ""casa"", ""saco""]
+    referencia = ""amor""
+    return [(p, sorted(p) == sorted(referencia)) for p in palavras]"
+Parallelizable,93,Parallelizable,no cross-iteration dependence observed,"def converter_para_binario():
+    valores = [5, 10, 15, 20]
+    return [(v, bin(v)) for v in valores]"
+Parallelizable,94,Parallelizable,no cross-iteration dependence observed,"def calcular_dias_para_natal():
+    from datetime import date
+    datas = [date(2023, 12, 20), date(2023, 12, 24), date(2023, 12, 31)]
+    natal = date(2023, 12, 25)
+    return [(d, (natal - d).days) for d in datas]"
+Parallelizable,95,Parallelizable,no cross-iteration dependence observed,"def classificar_numeros():
+    numeros = [10, 20, 30, 40]
+    return [(n, ""Par"" if n % 2 == 0 else ""Ímpar"", ""Múltiplo de 10"" if n % 10 == 0 else """") for n in numeros]"
+Parallelizable,96,Parallelizable,no cross-iteration dependence observed,"def extrair_vogais():
+    palavras = [""python"", ""programação"", ""dados""]
+    return [(p, [c for c in p if c in 'aeiou']) for p in palavras]"
+Parallelizable,97,Parallelizable,no cross-iteration dependence observed,"def calcular_volume_esferas():
+    raios = [1.0, 2.0, 3.0]
+    return [(r, (4/3) * 3.14159 * r**3) for r in raios]"
+Parallelizable,98,Parallelizable,no cross-iteration dependence observed,"def gerar_codigos():
+    produtos = [""Mouse"", ""Teclado"", ""Monitor""]
+    return [(p, f""{p[:3].upper()}-{len(p)}"") for p in produtos]"
+Parallelizable,99,Parallelizable,no cross-iteration dependence observed,"def verificar_extensoes():
+    arquivos = [""foto.jpg"", ""relatorio.pdf"", ""planilha.xlsx""]
+    return [(a, a.split('.')[-1]) for a in arquivos]"
+Parallelizable,100,Parallelizable,no cross-iteration dependence observed,"def calcular_desvio_padrao():
+    amostras = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    return [(a, sum(a)/len(a)) for a in amostras]"
+Parallelizable,101,Parallelizable,no cross-iteration dependence observed,"def calcular_raizes_quadradas():
+    numeros = [4, 9, 16, 25, 36]
+    resultados = []
+    for num in numeros:
+        resultados.append((num, num**0.5))
+    return resultados"
+Parallelizable,102,Parallelizable,no cross-iteration dependence observed,"def converter_fahrenheit_celsius():
+    temperaturas = [32, 68, 95, 104]
+    conversoes = []
+    for temp in temperaturas:
+        conversoes.append((temp, (temp - 32) * 5/9))
+    return conversoes"
+Parallelizable,103,Parallelizable,no cross-iteration dependence observed,"def contar_vogais():
+    palavras = [""Python"", ""Programação"", ""Dados""]
+    contagens = []
+    for palavra in palavras:
+        vogais = sum(1 for letra in palavra.lower() if letra in 'aeiou')
+        contagens.append((palavra, vogais))
+    return contagens"
+Parallelizable,104,Parallelizable,no cross-iteration dependence observed,"def calcular_imc():
+    dados = [(70, 1.75), (85, 1.80), (60, 1.65)]
+    resultados = []
+    for peso, altura in dados:
+        resultados.append((peso, altura, peso/(altura**2)))
+    return resultados"
+Parallelizable,105,Parallelizable,no cross-iteration dependence observed,"def verificar_palindromos():
+    strings = [""radar"", ""python"", ""ovo"", ""casa""]
+    resultados = []
+    for s in strings:
+        resultados.append((s, s == s[::-1]))
+    return resultados"
+Parallelizable,106,Parallelizable,no cross-iteration dependence observed,"def calcular_juros_simples():
+    investimentos = [(1000, 0.05, 2), (2000, 0.07, 3)]
+    resultados = []
+    for principal, taxa, tempo in investimentos:
+        resultados.append((principal, principal*taxa*tempo))
+    return resultados"
+Parallelizable,107,Parallelizable,no cross-iteration dependence observed,"def gerar_hashes_md5():
+    import hashlib
+    textos = [""senha123"", ""dados456"", ""info789""]
+    hashes = []
+    for texto in textos:
+        hashes.append((texto, hashlib.md5(texto.encode()).hexdigest()))
+    return hashes"
+Parallelizable,108,Parallelizable,no cross-iteration dependence observed,"def calcular_areas_circulos():
+    import math
+    raios = [1.0, 2.5, 3.0, 5.0]
+    areas = []
+    for r in raios:
+        areas.append((r, math.pi*r**2))
+    return areas"
+Parallelizable,109,Parallelizable,no cross-iteration dependence observed,"def classificar_numeros():
+    numeros = [1, 2, 3, 4, 5, 6]
+    classificacoes = []
+    for num in numeros:
+        classificacoes.append((num, ""par"" if num%2==0 else ""ímpar""))
+    return classificacoes"
+Parallelizable,110,Parallelizable,no cross-iteration dependence observed,"def extrair_dominios():
+    emails = [""user@exemplo.com"", ""admin@empresa.org"", ""contato@site.net""]
+    dominios = []
+    for email in emails:
+        dominios.append((email, email.split('@')[1]))
+    return dominios"
+Parallelizable,111,Parallelizable,no cross-iteration dependence observed,"def calcular_fatoriais():
+    from math import factorial
+    numeros = [1, 2, 3, 4, 5]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, factorial(n)))  
+    return resultados"
+Parallelizable,112,Parallelizable,no cross-iteration dependence observed,"def converter_para_binario():
+    numeros = [10, 15, 20, 25]
+    binarios = []
+    for num in numeros:
+        binarios.append((num, bin(num)))
+    return binarios"
+Parallelizable,113,Parallelizable,no cross-iteration dependence observed,"def calcular_volume_esferas():
+    import math
+    raios = [1.0, 2.0, 3.0]
+    volumes = []
+    for r in raios:
+        volumes.append((r, (4/3)*math.pi*r**3))
+    return volumes"
+Parallelizable,114,Parallelizable,no cross-iteration dependence observed,"def verificar_primos():
+    numeros = [2, 3, 4, 5, 7, 11, 13, 15]
+    resultados = []
+    for num in numeros:
+        if num < 2:
+            resultados.append((num, False))
+            continue
+        primo = all(num % i != 0 for i in range(2, int(num**0.5) + 1))
+        resultados.append((num, primo))
+    return resultados"
+Parallelizable,115,Parallelizable,no cross-iteration dependence observed,"def processar_strings():
+    strings = [""Python"", ""Código"", ""Exemplo""]
+    processadas = []
+    for s in strings:
+        processadas.append((s, s.upper(), s.lower(), len(s)))
+    return processadas"
+Parallelizable,116,Parallelizable,no cross-iteration dependence observed,"def calcular_descontos():
+    produtos = [(""Notebook"", 2500), (""Celular"", 1200), (""Tablet"", 800)]
+    descontos = []
+    for nome, preco in produtos:
+        desconto = preco*0.1 if preco>2000 else preco*0.05
+        descontos.append((nome, preco, desconto))
+    return descontos"
+Parallelizable,117,Parallelizable,no cross-iteration dependence observed,"def gerar_codigos():
+    produtos = [""Mouse"", ""Teclado"", ""Monitor""]
+    codigos = []
+    for i, produto in enumerate(produtos, 1001):
+        codigos.append((produto, f""COD-{i}""))
+    return codigos"
+Parallelizable,118,Parallelizable,no cross-iteration dependence observed,"def calcular_velocidades():
+    dados = [(100, 2), (150, 3), (200, 4)]
+    velocidades = []
+    for distancia, tempo in dados:
+        velocidades.append((distancia, tempo, distancia/tempo))
+    return velocidades"
+Parallelizable,119,Parallelizable,no cross-iteration dependence observed,"def analisar_textos():
+    textos = [""Python é poderoso"", ""Data Science"", ""Machine Learning""]
+    analises = []
+    for texto in textos:
+        palavras = texto.split()
+        vogais = sum(1 for letra in texto.lower() if letra in 'aeiou')
+        analises.append((texto, len(palavras), vogais))
+    return analises"
+Parallelizable,120,Parallelizable,no cross-iteration dependence observed,"def converter_para_hexadecimal():
+    numeros = [10, 15, 20, 255]
+    hexadecimais = []
+    for num in numeros:
+        hexadecimais.append((num, hex(num)))
+    return hexadecimais"
+Parallelizable,121,Parallelizable,no cross-iteration dependence observed,"def calcular_consumo_energia():
+    dispositivos = [(""Geladeira"", 50, 24), (""TV"", 100, 5), (""Lâmpada"", 15, 10)]
+    consumos = []
+    for nome, potencia, horas in dispositivos:
+        consumos.append((nome, potencia*horas/1000))
+    return consumos"
+Parallelizable,122,Parallelizable,no cross-iteration dependence observed,"def verificar_anagramas():
+    pares = [(""amor"", ""roma""), (""casa"", ""saco""), (""pato"", ""topa"")]
+    resultados = []
+    for a, b in pares:
+        resultados.append((a, b, sorted(a)==sorted(b)))
+    return resultados"
+Parallelizable,123,Parallelizable,no cross-iteration dependence observed,"def calcular_distancia_pontos():
+    pontos = [((0,0), (3,4)), ((1,1), (4,5)), ((2,3), (5,7))]
+    distancias = []
+    for (x1,y1), (x2,y2) in pontos:
+        distancia = ((x2-x1)**2 + (y2-y1)**2)**0.5
+        distancias.append(((x1,y1), (x2,y2), distancia))
+    return distancias"
+Parallelizable,124,Parallelizable,no cross-iteration dependence observed,"def processar_logs():
+    logs = [""ERRO: Sistema falhou"", ""INFO: Usuário logado"", ""ERRO: Arquivo não encontrado""]
+    contagens = []
+    for log in logs:
+        contagens.append((log, log.split(':')[0]))
+    return contagens"
+Parallelizable,125,Parallelizable,no cross-iteration dependence observed,"def classificar_idades():
+    idades = [12, 25, 7, 19, 30, 5]
+    categorias = []
+    for idade in idades:
+        categoria = ""Criança"" if idade<13 else ""Adolescente"" if idade<20 else ""Adulto""
+        categorias.append((idade, categoria))
+    return categorias"
+Parallelizable,126,Parallelizable,no cross-iteration dependence observed,"def calcular_potencia_eletrica():
+    dados = [(110, 10), (220, 5), (110, 15)]
+    potencias = []
+    for tensao, corrente in dados:
+        potencias.append((tensao, corrente, tensao*corrente))
+    return potencias"
+Parallelizable,127,Parallelizable,no cross-iteration dependence observed,"def extrair_metadados():
+    arquivos = [""relatorio.pdf"", ""imagem.jpg"", ""planilha.xlsx""]
+    metadados = []
+    for arquivo in arquivos:
+        nome, extensao = arquivo.split('.')
+        metadados.append((nome, extensao))
+    return metadados"
+Parallelizable,128,Parallelizable,no cross-iteration dependence observed,"def calcular_combustivel_viagem():
+    viagens = [(300, 12), (150, 10), (450, 15)]
+    consumos = []
+    for distancia, consumo_medio in viagens:
+        consumos.append((distancia, consumo_medio, distancia/consumo_medio))
+    return consumos"
+Parallelizable,129,Parallelizable,no cross-iteration dependence observed,"def gerar_senhas_aleatorias():
+    import random
+    import string
+    senhas = []
+    for _ in range(3):
+        tamanho = random.randint(8, 12)
+        senha = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(tamanho))
+        senhas.append((tamanho, senha))
+    return senhas"
+Parallelizable,130,Parallelizable,no cross-iteration dependence observed,"def converter_moedas():
+    valores = [100.0, 250.0, 50.0]
+    conversoes = []
+    for valor in valores:
+        conversoes.append((valor, valor/5.20))
+    return conversoes"
+Parallelizable,131,Parallelizable,no cross-iteration dependence observed,"def calcular_quadrados():
+    numeros = [1, 2, 3, 4, 5]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, n**2))
+    return resultados"
+Parallelizable,132,Parallelizable,no cross-iteration dependence observed,"def verificar_palavras_maior_5():
+    palavras = [""python"", ""dados"", ""algoritmo"", ""code""]
+    resultados = []
+    for p in palavras:
+        resultados.append((p, len(p) > 5))
+    return resultados"
+Parallelizable,133,Parallelizable,no cross-iteration dependence observed,"def converter_para_ascii():
+    caracteres = ['A', 'b', '1', '@']
+    resultados = []
+    for c in caracteres:
+        resultados.append((c, ord(c)))
+    return resultados"
+Parallelizable,134,Parallelizable,no cross-iteration dependence observed,"def calcular_area_retangulos():
+    dimensoes = [(3,4), (5,5), (2,7)]
+    resultados = []
+    for l, a in dimensoes:
+        resultados.append((l, a, l*a))
+    return resultados"
+Parallelizable,135,Parallelizable,no cross-iteration dependence observed,"def verificar_divisibilidade_3():
+    numeros = [9, 10, 12, 15]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, n%3 == 0))
+    return resultados"
+Parallelizable,136,Parallelizable,no cross-iteration dependence observed,"def extrair_ultimo_caractere():
+    palavras = [""banana"", ""casa"", ""dado""]
+    resultados = []
+    for p in palavras:
+        resultados.append((p, p[-1]))
+    return resultados"
+Parallelizable,137,Parallelizable,no cross-iteration dependence observed,"def calcular_cubos():
+    valores = [1, 2, 3, 4]
+    resultados = []
+    for v in valores:
+        resultados.append((v, v**3))
+    return resultados"
+Parallelizable,138,Parallelizable,no cross-iteration dependence observed,"def verificar_letra_inicial():
+    palavras = [""gato"", ""cachorro"", ""peixe""]
+    resultados = []
+    for p in palavras:
+        resultados.append((p, p[0].lower() in 'aeiou'))
+    return resultados"
+Parallelizable,139,Parallelizable,no cross-iteration dependence observed,"def calcular_dobro():
+    numeros = [10, 25, 30]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, n*2))
+    return resultados"
+Parallelizable,140,Parallelizable,no cross-iteration dependence observed,"def contar_caracteres():
+    strings = [""hello"", ""world""]
+    resultados = []
+    for s in strings:
+        resultados.append((s, len(s)))
+    return resultados"
+Parallelizable,141,Parallelizable,no cross-iteration dependence observed,"def calcular_raizes_cubicas():
+    numeros = [8, 27, 64, 125]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, n**(1/3)))
+    return resultados"
+Parallelizable,142,Parallelizable,no cross-iteration dependence observed,"def verificar_numeros_primos():
+    numeros = [2, 3, 4, 5, 7, 11, 13]
+    resultados = []
+    for n in numeros:
+        primo = n > 1
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                primo = False
+                break
+        resultados.append((n, primo))
+    return resultados"
+Parallelizable,143,Parallelizable,no cross-iteration dependence observed,"def converter_para_octal():
+    valores = [10, 20, 30, 40]
+    resultados = []
+    for v in valores:
+        resultados.append((v, oct(v)))
+    return resultados"
+Parallelizable,144,Parallelizable,no cross-iteration dependence observed,"def calcular_perimetro_circulos():
+    raios = [1.0, 2.5, 3.0, 5.0]
+    resultados = []
+    for r in raios:
+        resultados.append((r, 2 * 3.14159 * r))
+    return resultados"
+Parallelizable,145,Parallelizable,no cross-iteration dependence observed,"def verificar_anagramas():
+    pares = [(""amor"", ""roma""), (""casa"", ""saco""), (""pato"", ""topa"")]
+    resultados = []
+    for a, b in pares:
+        resultados.append((a, b, sorted(a) == sorted(b)))
+    return resultados"
+Parallelizable,146,Parallelizable,no cross-iteration dependence observed,"def calcular_potencia():
+    bases = [2, 3, 4]
+    expoentes = [3, 2, 5]
+    resultados = []
+    for base, exp in zip(bases, expoentes):
+        resultados.append((base, exp, base**exp))
+    return resultados"
+Parallelizable,147,Parallelizable,no cross-iteration dependence observed,"def extrair_primeiro_nome():
+    nomes = [""João Silva"", ""Maria Santos"", ""Pedro Costa""]
+    resultados = []
+    for nome in nomes:
+        resultados.append((nome, nome.split()[0]))
+    return resultados"
+Parallelizable,148,Parallelizable,no cross-iteration dependence observed,"def verificar_palindromos_numericos():
+    numeros = [121, 123, 1331, 456]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, str(n) == str(n)[::-1]))
+    return resultados"
+Parallelizable,149,Parallelizable,no cross-iteration dependence observed,"def calcular_volume_cubos():
+    arestas = [2, 3, 4]
+    resultados = []
+    for a in arestas:
+        resultados.append((a, a**3))
+    return resultados"
+Parallelizable,150,Parallelizable,no cross-iteration dependence observed,"def converter_temperatura_kelvin():
+    celsius = [0, 25, 37, 100]
+    resultados = []
+    for c in celsius:
+        resultados.append((c, c + 273.15))
+    return resultados"
+Parallelizable,151,Parallelizable,no cross-iteration dependence observed,"def verificar_multiplos_5():
+    numeros = [10, 15, 22, 30]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, n % 5 == 0))
+    return resultados"
+Parallelizable,152,Parallelizable,no cross-iteration dependence observed,"def calcular_comprimento_strings():
+    palavras = [""Python"", ""Programação"", ""Dados""]
+    resultados = []
+    for p in palavras:
+        resultados.append((p, len(p)))
+    return resultados"
+Parallelizable,153,Parallelizable,no cross-iteration dependence observed,"def extrair_dominio_email():
+    emails = [""user@gmail.com"", ""admin@empresa.com""]
+    resultados = []
+    for email in emails:
+        resultados.append((email, email.split('@')[1]))
+    return resultados"
+Parallelizable,154,Parallelizable,no cross-iteration dependence observed,"def verificar_letra_maiuscula():
+    strings = [""Python"", ""java"", ""C++""]
+    resultados = []
+    for s in strings:
+        resultados.append((s, s[0].isupper()))
+    return resultados"
+Parallelizable,155,Parallelizable,no cross-iteration dependence observed,"def calcular_area_triangulos():
+    bases_alturas = [(6, 8), (5, 12), (3, 4)]
+    resultados = []
+    for b, h in bases_alturas:
+        resultados.append((b, h, 0.5 * b * h))
+    return resultados"
+Parallelizable,156,Parallelizable,no cross-iteration dependence observed,"def converter_para_binario_8bits():
+    numeros = [5, 10, 15, 20]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, bin(n)[2:].zfill(8)))
+    return resultados"
+Parallelizable,157,Parallelizable,no cross-iteration dependence observed,"def verificar_ano_bissexto():
+    anos = [2020, 2021, 2024, 1900]
+    resultados = []
+    for ano in anos:
+        bissexto = (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0)
+        resultados.append((ano, bissexto))
+    return resultados"
+Parallelizable,158,Parallelizable,no cross-iteration dependence observed,"def calcular_desconto():
+    produtos = [(""Notebook"", 2500), (""Celular"", 1200)]
+    resultados = []
+    for nome, preco in produtos:
+        resultados.append((nome, preco, preco * 0.1))
+    return resultados"
+Parallelizable,159,Parallelizable,no cross-iteration dependence observed,"def extrair_ultimas_3_letras():
+    palavras = [""Python"", ""Programação"", ""Algoritmo""]
+    resultados = []
+    for p in palavras:
+        resultados.append((p, p[-3:]))
+    return resultados"
+Parallelizable,160,Parallelizable,no cross-iteration dependence observed,"def verificar_numero_par():
+    numeros = [2, 5, 8, 11]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, n % 2 == 0))
+    return resultados"
+Parallelizable,161,Parallelizable,no cross-iteration dependence observed,"def calcular_media_simples():
+    numeros = [10, 20, 30, 40]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, sum(numeros)/len(numeros)))
+    return resultados"
+Parallelizable,162,Parallelizable,no cross-iteration dependence observed,"def converter_para_maiusculas():
+    palavras = [""python"", ""dados"", ""programação""]
+    resultados = []
+    for p in palavras:
+        resultados.append((p, p.upper()))
+    return resultados"
+Parallelizable,163,Parallelizable,no cross-iteration dependence observed,"def verificar_substring():
+    palavras = [""python"", ""programação"", ""dados""]
+    substring = ""pro""
+    resultados = []
+    for p in palavras:
+        resultados.append((p, substring in p))
+    return resultados"
+Parallelizable,164,Parallelizable,no cross-iteration dependence observed,"def calcular_fatorial():
+    from math import factorial
+    numeros = [1, 2, 3, 4, 5]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, factorial(n)))
+    return resultados"
+Parallelizable,165,Parallelizable,no cross-iteration dependence observed,"def extrair_ano_data():
+    datas = [""2023-12-25"", ""2024-01-01"", ""2022-06-15""]
+    resultados = []
+    for data in datas:
+        resultados.append((data, data.split('-')[0]))
+    return resultados"
+Parallelizable,166,Parallelizable,no cross-iteration dependence observed,"def verificar_email_valido():
+    emails = [""user@exemplo.com"", ""invalido"", ""outro@site.com""]
+    resultados = []
+    for email in emails:
+        resultados.append((email, '@' in email and '.' in email.split('@')[1]))
+    return resultados"
+Parallelizable,167,Parallelizable,no cross-iteration dependence observed,"def calcular_distancia_origem():
+    pontos = [(3, 4), (1, 1), (5, 12)]
+    resultados = []
+    for x, y in pontos:
+        resultados.append(((x, y), (x**2 + y**2)**0.5))
+    return resultados"
+Parallelizable,168,Parallelizable,no cross-iteration dependence observed,"def converter_para_minusculas():
+    palavras = [""PYTHON"", ""DADOS"", ""PROGRAMAÇÃO""]
+    resultados = []
+    for p in palavras:
+        resultados.append((p, p.lower()))
+    return resultados"
+Parallelizable,169,Parallelizable,no cross-iteration dependence observed,"def verificar_palavra_vazia():
+    strings = [""hello"", """", ""world"", """"]
+    resultados = []
+    for s in strings:
+        resultados.append((s, len(s) == 0))
+    return resultados"
+Parallelizable,170,Parallelizable,no cross-iteration dependence observed,"def calcular_dobro_quadrado():
+    numeros = [2, 3, 4, 5]
+    resultados = []
+    for n in numeros:
+        resultados.append((n, 2 * n**2))
+    return resultados"
+Undefined,1,Undefined,loop-carried scalar 'total',"numbers = [1, 2, 3, 4, 5]
+squares = []
+total = 0  
+for num in numbers:
+    total += num  
+    squares.append(total ** 2)  
+print(squares)"
+Undefined,2,Undefined,loop-carried scalar 'count',"words = [""python"", ""code"", ""parallel""]
+upper_words = []
+count = 0  
+for word in words:
+    count += len(word)  
+    upper_words.append(f""{word.upper()}_{count}"") 
+print(upper_words)"
+Undefined,3,Undefined,loop-carried scalar 'sum_odds',"numbers = [10, 15, 20, 25, 30]
+odd_numbers = []
+sum_odds = 0  
+for num in numbers:
+    if num % 2 != 0:
+        sum_odds += num  
+        odd_numbers.append(sum_odds)  
+print(odd_numbers)"
+Undefined,4,Undefined,loop-carried scalar 'prev_hash',"import hashlib
+
+strings = [""hello"", ""world"", ""parallel""]
+hashes = []
+prev_hash = """"  
+for s in strings:
+    combined = s + prev_hash 
+    prev_hash = hashlib.md5(combined.encode()).hexdigest()
+    hashes.append(prev_hash)  
+print(hashes)"
+Undefined,5,Undefined,loop-carried scalar 'prev_row',"size = 3
+identity_matrix = []
+prev_row = [0] * size
+for i in range(size):
+    row = []
+    for j in range(size):
+        val = 1 if i == j else prev_row[j] * 0  
+        row.append(val)
+    prev_row = row
+    identity_matrix.append(row)  
+print(identity_matrix)"
+Undefined,6,Undefined,loop-carried scalar 'total_words',"sentences = [""Hello world"", ""Parallel computing"", ""Python is great""]
+word_counts = []
+total_words = 0  
+for sentence in sentences:
+    total_words += len(sentence.split())  
+    word_counts.append(total_words)  
+print(word_counts)"
+Undefined,7,Undefined,loop-carried scalar 'phase',"import math
+
+angles = [0, 30, 45, 60, 90]
+sines = []
+phase = 0  
+for angle in angles:
+    phase += angle  
+    sines.append(math.sin(math.radians(phase)))  
+print(sines)"
+Undefined,8,Undefined,loop-carried scalar 'last_domain',"urls = [""https://google.com"", ""https://github.com"", ""https://python.org""]
+domains = []
+last_domain = """"  
+for url in urls:
+    domain = url.split(""//"")[1].split(""/"")[0]
+    domain = f""{last_domain}_{domain}"" if last_domain else domain  
+    last_domain = domain
+    domains.append(domain)  
+print(domains)"
+Undefined,9,Undefined,loop-carried scalar 'last_fact',"import math
+
+numbers = [5, 7, 10]
+factorials = []
+last_fact = 1  
+for n in numbers:
+    last_fact *= math.factorial(n)  
+    factorials.append(last_fact)  
+print(factorials)"
+Undefined,10,Undefined,loop-carried scalar 'prev_avg',"pixels = [(120, 80, 200), (255, 255, 255), (0, 0, 0)]
+grayscale = []
+prev_avg = 0 
+for pixel in pixels:
+    avg = sum(pixel) // 3
+    avg = (avg + prev_avg) // 2 
+    prev_avg = avg
+    grayscale.append(avg)  
+print(grayscale)"
+Undefined,11,Undefined,loop-carried scalar 'acumulado',"numeros = [1, 2, 3, 4, 5]
+somas = []
+acumulado = 0
+for n in numeros:
+    acumulado += n
+    somas.append(acumulado)
+print(""Exemplo 1 - Soma acumulada:"", somas)"
+Undefined,12,Undefined,loop-carried scalar 'acumulado',"numeros = [1, 2, 3, 4]
+produtos = []
+acumulado = 1
+for n in numeros:
+    acumulado *= n
+    produtos.append(acumulado)
+print(""Exemplo 2 - Produto acumulado:"", produtos)"
+Undefined,13,Undefined,list appended to and read inside the loop,"fibonacci = [0, 1]
+for i in range(8):
+    proximo = fibonacci[-1] + fibonacci[-2]
+    fibonacci.append(proximo)
+print(""Exemplo 3 - Sequência de Fibonacci:"", fibonacci)"
+Undefined,14,Undefined,loop-carried scalar 'soma',"valores = [10, 20, 30, 40]
+media_parcial = []
+soma = 0
+for i in range(len(valores)):
+    soma += valores[i]
+    media = soma / (i + 1)
+    media_parcial.append(media)
+print(""Exemplo 4 - Média acumulada:"", media_parcial)"
+Undefined,15,Undefined,list appended to and read inside the loop,"sequencia = [1]
+for i in range(1, 6):
+    sequencia.append(sequencia[i-1] * 2 + 1)
+print(""Exemplo 5 - Sequência dependente:"", sequencia)"
+Undefined,16,Parallelizable,no cross-iteration dependence observed,"valores = [10, 13, 15, 14, 20]
+diferencas = [0]
+for i in range(1, len(valores)):
+    diferenca = valores[i] - valores[i-1]
+    diferencas.append(diferenca)
+print(""Exemplo 6 - Diferenças entre vizinhos:"", diferencas)"
+Undefined,17,Undefined,loop-carried scalar 'saldo',"movimentos = [100, -30, -20, 50, -10]
+saldos = []
+saldo = 0
+for valor in movimentos:
+    saldo += valor
+    saldos.append(saldo)
+print(""Exemplo 7 - Saldos ao longo do tempo:"", saldos)"
+Undefined,18,Parallelizable,no cross-iteration dependence observed,"leituras = [1, 1, 2, 2, 3, 2, 2, 1]
+mudancas = []
+for i in range(1, len(leituras)):
+    if leituras[i] != leituras[i - 1]:
+        mudancas.append((i, leituras[i]))
+print(""Exemplo 8 - Mudanças detectadas:"", mudancas)"
+Undefined,19,Undefined,whole-container update inside the loop,"valores = [1, 2, 2, 3, 1, 4, 2]
+vistos = set()
+filtrado = []
+for v in valores:
+    if v not in vistos:
+        filtrado.append(v)
+        vistos.add(v)
+print(""Exemplo 9 - Sem duplicatas:"", filtrado)"
+Undefined,20,Undefined,loop-carried scalar 'resultado',"letras = [""a"", ""b"", ""c"", ""d""]
+resultado = """"
+etapas = []
+for letra in letras:
+    resultado += letra
+    etapas.append(resultado)
+print(""Exemplo 10 - Construção passo a passo:"", etapas)"
+Undefined,21,Undefined,loop-carried scalar 'resultado',"def fatorial_cumulativo():
+    resultado = 1
+    valores = []
+    for i in range(1, 10):
+        resultado *= i
+        valores.append(resultado)
+    return valores"
+Undefined,22,Undefined,list appended to and read inside the loop,"def fibonacci():
+    fib = [0, 1]
+    for i in range(2, 15):
+        fib.append(fib[i-1] + fib[i-2])
+    return fib"
+Undefined,23,Undefined,loop-carried scalar 'total',"def soma_acumulativa():
+    numeros = [5, 2, 8, 1, 9, 3]
+    total = 0
+    resultado = []
+    for num in numeros:
+        total += num
+        resultado.append(total)
+    return resultado"
+Undefined,24,Undefined,live-out scalar(s): ['texto'],"def string_crescente():
+    texto = """"
+    caracteres = ['a', 'b', 'c', 'd', 'e']
+    for char in caracteres:
+        texto += char
+    return texto"
+Undefined,25,Undefined,live-out scalar(s): ['produto'],"def multiplicacao_aninhada():
+    produto = 1
+    fatores = [1, 2, 3, 4, 5]
+    for num in fatores:
+        produto *= num
+    return produto"
+Undefined,26,Undefined,while loop: iteration space depends on state,"def busca_em_profundidade(grafo={'A':['B','C'], 'B':['D'], 'C':[], 'D':[]}):
+    visitados = set()
+    pilha = ['A']
+    resultado = []
+    while pilha:
+        vertice = pilha.pop()
+        if vertice not in visitados:
+            visitados.add(vertice)
+            resultado.append(vertice)
+            pilha.extend(grafo[vertice])
+    return resultado"
+Undefined,27,Undefined,the same container element is written by different iterations,"def bubble_sort():
+    arr = [5, 3, 8, 6, 7, 2]
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr"
+Undefined,28,Undefined,loop-carried scalar 'seed',"def gerador_congruencial():
+    seed = 5
+    resultados = []
+    for _ in range(10):
+        seed = (8121 * seed + 28411) % 134456
+        resultados.append(seed)
+    return resultados"
+Undefined,29,Undefined,while loop: iteration space depends on state,"def caminho_grafo():
+    grafo = {0: [1, 2], 1: [3], 2: [4], 3: [], 4: []}
+    caminho = [0]
+    atual = 0
+    while grafo[atual]:
+        proximo = grafo[atual].pop()
+        caminho.append(proximo)
+        atual = proximo
+    return caminho"
+Undefined,30,n/a,no top-level loop,"def fatorial_recursivo(n=5):
+    if n == 0:
+        return 1
+    else:
+        return n * fatorial_recursivo(n-1)"
+Undefined,31,Undefined,loop-carried scalar 'capital',"def simulacao_juros():
+    capital = 1000
+    juros = []
+    for _ in range(10):
+        capital *= 1.05
+        juros.append(round(capital, 2))
+    return juros"
+Undefined,32,n/a,no top-level loop,"def torre_hanoi(n=3):
+    movimentos = []
+    def mover(de, para):
+        movimentos.append(f""{de}→{para}"")
+    def resolver(n, origem, destino, auxiliar):
+        if n > 0:
+            resolver(n-1, origem, auxiliar, destino)
+            mover(origem, destino)
+            resolver(n-1, auxiliar, destino, origem)
+    resolver(n, 'A', 'C', 'B')
+    return movimentos"
+Undefined,33,Undefined,live-out scalar(s): ['integral'],"def integracao_numerica():
+    def f(x): return x**2
+    a, b = 0, 2
+    n = 100
+    h = (b - a) / n
+    integral = 0
+    for i in range(n):
+        x = a + i*h
+        integral += f(x) * h
+    return integral"
+Undefined,34,Undefined,loop-carried scalar 'x',"def newton_raphson(f=lambda x: x**2-2, df=lambda x: 2*x, x0=2, iteracoes=5):
+    x = x0
+    aproximacoes = []
+    for _ in range(iteracoes):
+        x = x - f(x)/df(x)
+        aproximacoes.append(x)
+    return aproximacoes"
+Undefined,35,Undefined,loop-carried scalar 'estado',"def markov_chain():
+    matriz = [[0.9, 0.1], [0.5, 0.5]]
+    estado = [1, 0]
+    historico = []
+    for _ in range(10):
+        novo_estado = [0, 0]
+        for i in range(2):
+            for j in range(2):
+                novo_estado[j] += estado[i] * matriz[i][j]
+        estado = novo_estado
+        historico.append(estado.copy())
+    return historico"
+Undefined,36,Undefined,loop-carried scalar 't',"def runge_kutta(f=lambda t, y: t + y, t0=0, y0=1, h=0.1, passos=5):
+    t, y = t0, y0
+    resultados = []
+    for _ in range(passos):
+        k1 = h * f(t, y)
+        k2 = h * f(t + h/2, y + k1/2)
+        k3 = h * f(t + h/2, y + k2/2)
+        k4 = h * f(t + h, y + k3)
+        y += (k1 + 2*k2 + 2*k3 + k4)/6
+        t += h
+        resultados.append(y)
+    return resultados"
+Undefined,37,Undefined,loop-carried scalar 'registrador',"def lfsr():
+    registrador = 0b1001
+    saida = []
+    for _ in range(15):
+        bit = (registrador ^ (registrador >> 1)) & 1
+        registrador = (registrador >> 1) | (bit << 3)
+        saida.append(registrador)
+    return saida"
+Undefined,38,Undefined,container element written in one iteration and read in another,"def caminho_critico():
+    atividades = {
+        'A': {'duracao': 2, 'dependencias': []},
+        'B': {'duracao': 3, 'dependencias': ['A']},
+        'C': {'duracao': 1, 'dependencias': ['B']}
+    }
+    tempos = {}
+    for atv in ['A', 'B', 'C']:
+        if not atividades[atv]['dependencias']:
+            tempos[atv] = atividades[atv]['duracao']
+        else:
+            tempos[atv] = max(tempos[dep] for dep in atividades[atv]['dependencias']) + atividades[atv]['duracao']
+    return tempos"
+Undefined,39,Undefined,the same container element is written by different iterations,"def gauss_seidel(A=[[4,1],[1,3]], b=[1,2], iteracoes=5):
+    n = len(b)
+    x = [0] * n
+    for _ in range(iteracoes):
+        for i in range(n):
+            soma = sum(A[i][j] * x[j] for j in range(n) if j != i)
+            x[i] = (b[i] - soma) / A[i][i]
+    return x"
+Undefined,40,Undefined,the same container element is written by different iterations,"def backpropagation():
+    pesos = [0.5, -0.3]
+    entrada = 0.7
+    alvo = 1.0
+    historico = []
+    for _ in range(10):
+        saida = entrada * pesos[0] + pesos[1]
+        erro = alvo - saida
+        pesos[0] += 0.1 * erro * entrada
+        pesos[1] += 0.1 * erro
+        historico.append(pesos.copy())
+    return historico"
+Undefined,41,Undefined,whole-container update inside the loop,"def fechamento_transitivo(grafo={'A':['B'],'B':['C'],'C':[]}):
+    fechamento = {k: set(v) for k, v in grafo.items()}
+    for k in grafo:
+        for i in grafo:
+            if k in fechamento[i]:
+                fechamento[i].update(fechamento[k])
+    return fechamento"
+Undefined,42,Undefined,loop-carried scalar 'saudaveis',"def simulacao_epidemia():
+    saudaveis = 990
+    infectados = 10
+    recuperados = 0
+    historico = []
+    for _ in range(20):
+        novos_infectados = min(0.0003 * saudaveis * infectados, saudaveis)
+        novos_recuperados = 0.1 * infectados
+        saudaveis -= novos_infectados
+        infectados += novos_infectados - novos_recuperados
+        recuperados += novos_recuperados
+        historico.append((saudaveis, infectados, recuperados))
+    return historico"
+Undefined,43,Undefined,loop-carried scalar 'texto',"def hash_encadeado():
+    from hashlib import sha256
+    texto = ""dado inicial""
+    hashes = []
+    for _ in range(5):
+        texto = sha256(texto.encode()).hexdigest()
+        hashes.append(texto)
+    return hashes"
+Undefined,44,Undefined,loop-carried scalar 'dentro',"def monte_carlo_dependente():
+    import random
+    pontos = [(random.random(), random.random()) for _ in range(1000)]
+    dentro = 0
+    resultados = []
+    for x, y in pontos:
+        if x**2 + y**2 <= 1:
+            dentro += 1
+        pi_estimado = 4 * dentro / (len(resultados)+1)
+        resultados.append(pi_estimado)
+    return resultados[-10:]"
+Undefined,45,Undefined,live-out scalar(s): ['count'],"def compressao_rle():
+    texto = ""AAABBBCCCDDDD""
+    comprimido = []
+    count = 1
+    for i in range(1, len(texto)):
+        if texto[i] == texto[i-1]:
+            count += 1
+        else:
+            comprimido.append((texto[i-1], count))
+            count = 1
+    comprimido.append((texto[-1], count))
+    return comprimido"
+Undefined,46,Parallelizable,no cross-iteration dependence observed,"def gerador_mandelbrot():
+    resultados = []
+    for y in range(-10, 11):
+        linha = []
+        for x in range(-20, 21):
+            c = complex(x/10, y/10)
+            z = 0
+            for _ in range(20):
+                z = z**2 + c
+                if abs(z) > 2:
+                    break
+            linha.append(abs(z))
+        resultados.append(linha)
+    return resultados"
+Undefined,47,Undefined,loop-carried scalar 'chave',"def criptografia_fluxo():
+    chave = 0b1011
+    texto = [0b0101, 0b1100, 0b0011]
+    cifrado = []
+    for byte in texto:
+        cifrado.append(byte ^ chave)
+        chave = (chave << 1) | (chave >> 3) & 0b1111
+    return cifrado"
+Undefined,48,Undefined,loop-carried scalar 'preco',"def simulacao_bolsa():
+    import random
+    preco = 100.0
+    historico = []
+    for _ in range(30):
+        variacao = (random.random() - 0.5) * 0.1 * preco
+        preco += variacao
+        historico.append(preco)
+    return historico"
+Undefined,49,Undefined,loop-carried scalar 'celulas',"def automato_celular():
+    celulas = [0, 1, 0, 1, 0, 1, 0, 1]
+    historico = []
+    for _ in range(5):
+        novas_celulas = []
+        for i in range(len(celulas)):
+            vizinhos = celulas[(i-1)%len(celulas)], celulas[(i+1)%len(celulas)]
+            novas_celulas.append(1 if sum(vizinhos) == 1 else 0)
+        celulas = novas_celulas
+        historico.append(celulas.copy())
+    return historico"
+Undefined,50,Undefined,loop-carried scalar 'temperatura',"def difusao_calor():
+    temperatura = [20]*10
+    temperatura[4] = 100
+    historico = []
+    for _ in range(10):
+        nova_temp = temperatura.copy()
+        for i in range(1, len(temperatura)-1):
+            nova_temp[i] = 0.5 * (temperatura[i-1] + temperatura[i+1])
+        temperatura = nova_temp
+        historico.append(temperatura.copy())
+    return historico"
+Undefined,51,Undefined,list appended to and read inside the loop,"def fibonacci():
+    n = 10  
+    fib = [0, 1]
+    for i in range(2, n+1):
+        fib.append(fib[i-1] + fib[i-2])  
+    return fib[n]"
+Undefined,52,Undefined,container element written in one iteration and read in another,"def bubble_sort():
+    arr = [5, 3, 8, 6, 7, 2]
+    n = len(arr)
+    for i in range(n-1):  
+        if arr[i] > arr[i+1]:
+            arr[i], arr[i+1] = arr[i+1], arr[i]  
+    return arr"
+Undefined,53,Undefined,loop-carried scalar 'capital',"def juros_compostos():
+    capital = 1000
+    taxa = 0.05
+    historico = [capital]
+    for _ in range(5): 
+        capital *= (1 + taxa)  
+        historico.append(round(capital, 2))
+    return historico"
+Undefined,54,Undefined,list appended to and read inside the loop,"def prefix_sum():
+    arr = [3, 1, 4, 1, 5]
+    prefix = [arr[0]]
+    for i in range(1, len(arr)):
+        prefix.append(prefix[i-1] + arr[i])  
+    return prefix"
+Undefined,55,Undefined,loop-carried scalar 'S',"def sir_model():
+    S, I, R = 990, 10, 0
+    beta, gamma = 0.0003, 0.1
+    historico = [(S, I, R)]
+    for _ in range(10): 
+        novos_infectados = min(beta * S * I, S)
+        novos_recuperados = gamma * I
+        S -= novos_infectados
+        I += novos_infectados - novos_recuperados
+        R += novos_recuperados
+        historico.append((S, I, R))
+    return historico"
+Undefined,56,Undefined,loop-carried scalar 'seed',"def gerador_congruencial():
+    seed = 5
+    resultados = [seed]
+    for _ in range(5):
+        seed = (8121 * seed + 28411) % 134456  
+        resultados.append(seed)
+    return resultados"
+Undefined,57,Undefined,live-out scalar(s): ['fatorial'],"def calcular_fatorial():
+    n = 5
+    fatorial = 1
+    for i in range(1, n+1):
+        fatorial *= i  
+    return fatorial"
+Undefined,58,Undefined,loop-carried scalar 'estado',"def markov_chain():
+    import numpy as np
+    transicao = [[0.9, 0.1], [0.5, 0.5]]
+    estado = [1, 0]
+    historico = [estado.copy()]
+    for _ in range(3):  # 3 passos
+        estado = np.dot(estado, transicao)  
+        historico.append([round(x, 2) for x in estado])
+    return historico"
+Undefined,59,Undefined,loop-carried scalar 'distancia_anterior',"import math
+
+dias = 10
+distancia_anterior = 100000
+aceleracao_base = 1.01
+dia = 1
+
+print(""Distância acumulada por dia (em km):"")
+
+for _ in range(dias):
+    nova_distancia = distancia_anterior * aceleracao_base * math.log(dia + 1)
+    print(f""Dia {dia}: {nova_distancia:,.2f} km"")
+    distancia_anterior = nova_distancia
+    dia += 1"
+Undefined,60,Undefined,loop-carried scalar 't',"def runge_kutta():
+    def f(t, y): return t + y  
+    t, y, h = 0, 1, 0.1
+    solucao = [(t, y)]
+    for _ in range(3):  
+        k1 = h * f(t, y)
+        k2 = h * f(t + h/2, y + k1/2)
+        k3 = h * f(t + h/2, y + k2/2)
+        k4 = h * f(t + h, y + k3)
+        y += (k1 + 2*k2 + 2*k3 + k4)/6  
+        t += h
+        solucao.append((round(t,1), round(y,4)))
+    return solucao"
+Undefined,61,Undefined,loop-carried scalar 'fat',"def calcular_fatoriais():
+    numeros = [1, 2, 3, 4, 5, 6]
+    resultados = []
+    fat = 1
+    for n in numeros:
+        fat *= n
+        resultados.append((n, fat))
+    return resultados"
+Undefined,62,Undefined,loop-carried scalar 'ultimo',"def converter_para_hexadecimal():
+    valores = [10, 15, 20, 255, 100]
+    hexadecimais = []
+    ultimo = 0
+    for val in valores:
+        ultimo = val + ultimo % 100
+        hexadecimais.append((ultimo, hex(ultimo)))
+    return hexadecimais"
+Undefined,63,Undefined,loop-carried scalar 'ultimo_primo',"def verificar_primos():
+    numeros = [2, 3, 4, 5, 7, 11, 13, 15]
+    primos = []
+    ultimo_primo = None
+    for num in numeros:
+        primo = num > 1
+        for i in range(2, int(num**0.5)+1):
+            if num % i == 0:
+                primo = False
+                break
+        if primo:
+            ultimo_primo = num
+        primos.append((num, primo, ultimo_primo))
+    return primos"
+Undefined,64,Undefined,loop-carried scalar 'soma',"def calcular_area_circulos():
+    raios = [1.0, 2.5, 3.0, 5.0]
+    areas = []
+    soma = 0
+    for r in raios:
+        soma += r
+        areas.append((soma, 3.14159 * soma ** 2))
+    return areas"
+Undefined,65,Undefined,loop-carried scalar 'concat',"def processar_strings():
+    palavras = [""Python"", ""Código"", ""Exemplo"", ""Dados""]
+    processadas = []
+    concat = """"
+    for palavra in palavras:
+        concat += palavra[0]
+        processadas.append((concat, palavra.upper(), palavra.lower(), len(concat)))
+    return processadas"
+Undefined,66,Undefined,loop-carried scalar 'media',"def classificar_temperaturas():
+    temps = [20.5, 15.0, 30.2, 10.7, 25.0]
+    classificacoes = []
+    media = 0
+    for i, temp in enumerate(temps):
+        media = (media * i + temp) / (i + 1)
+        classificacao = ""Frio"" if temp < media else ""Quente""
+        classificacoes.append((temp, media, classificacao))
+    return classificacoes"
+Undefined,67,Undefined,loop-carried scalar 'total',"def calcular_descontos():
+    precos = [100.0, 50.0, 200.0, 75.0]
+    descontos = []
+    total = 0
+    for preco in precos:
+        total += preco
+        desconto = preco * 0.1 if total > 300 else preco * 0.05
+        descontos.append((total, desconto, preco - desconto))
+    return descontos"
+Undefined,68,Undefined,loop-carried scalar 'a',"def gerar_sequencia_fibonacci():
+    n = 10
+    sequencia = []
+    a, b = 0, 1
+    for _ in range(n):
+        sequencia.append(a)
+        a, b = b, a + b
+    return sequencia"
+Undefined,69,Undefined,loop-carried scalar 'padrao',"def analisar_senhas():
+    senhas = [""senha123"", ""123456"", ""Segura@2023"", ""admin""]
+    forcas = []
+    padrao = """"
+    for senha in senhas:
+        padrao += senha[0]
+        comprimento = len(padrao)
+        tem_maiuscula = any(c.isupper() for c in padrao)
+        tem_especial = any(not c.isalnum() for c in padrao)
+        forcas.append((padrao, comprimento * (1 + tem_maiuscula + tem_especial)))
+    return forcas"
+Undefined,70,Undefined,loop-carried scalar 'offset',"def converter_temperaturas():
+    celsius = [0.0, 25.0, 37.0, 100.0]
+    conversoes = []
+    offset = 0
+    for temp in celsius:
+        offset += temp/10
+        fahrenheit = (temp * 9/5) + 32 + offset
+        kelvin = temp + 273.15 + offset
+        conversoes.append((temp, fahrenheit, kelvin))
+    return conversoes"
+Undefined,71,Undefined,loop-carried scalar 'imc_anterior',"def calcular_imc():
+    dados = [(70, 1.75), (85, 1.80), (60, 1.65)]
+    resultados = []
+    imc_anterior = 0
+    for peso, altura in dados:
+        imc = peso / (altura ** 2) + imc_anterior/10
+        imc_anterior = imc
+        resultados.append((peso, altura, imc))
+    return resultados"
+Undefined,72,Undefined,loop-carried scalar 'ultimo_palindromo',"def verificar_palindromos():
+    palavras = [""radar"", ""python"", ""ovo"", ""casa""]
+    resultados = []
+    ultimo_palindromo = """"
+    for palavra in palavras:
+        if palavra == palavra[::-1]:
+            ultimo_palindromo = palavra
+        resultados.append((palavra, palavra == palavra[::-1], ultimo_palindromo))
+    return resultados"
+Undefined,73,Undefined,loop-carried scalar 'montante_acumulado',"def calcular_juros_compostos():
+    investimentos = [(1000, 0.05, 5), (5000, 0.07, 10), (2000, 0.03, 3)]
+    resultados = []
+    montante_acumulado = 0
+    for principal, taxa, anos in investimentos:
+        montante = principal * (1 + taxa) ** anos + montante_acumulado
+        montante_acumulado += montante
+        resultados.append((principal, taxa, anos, montante))
+    return resultados"
+Undefined,74,Undefined,loop-carried scalar 'media',"def processar_dados_sensor():
+    leituras = [23.5, 24.0, 22.8, 25.1, 21.9]
+    processados = []
+    media = leituras[0]
+    for leitura in leituras:
+        media = (media + leitura) / 2
+        processados.append((leitura, media))
+    return processados"
+Undefined,75,Undefined,loop-carried scalar 'total',"def classificar_produtos():
+    produtos = [(""Notebook"", 2500), (""Celular"", 1200), (""Tablet"", 800)]
+    classificacoes = []
+    total = 0
+    for nome, preco in produtos:
+        total += preco
+        categoria = ""Premium"" if preco > total/len(classificacoes+[1]) else ""Básico""
+        classificacoes.append((nome, preco, categoria))
+    return classificacoes"
+Undefined,76,Undefined,loop-carried scalar 'tempo_total',"def calcular_velocidade_media():
+    dados = [(100, 2), (150, 3), (200, 4)]
+    velocidades = []
+    tempo_total = 0
+    for distancia, tempo in dados:
+        tempo_total += tempo
+        velocidades.append((distancia, tempo_total, distancia/tempo_total))
+    return velocidades"
+Undefined,77,Undefined,loop-carried scalar 'prefixo',"def extrair_dominios():
+    emails = [""user@gmail.com"", ""admin@empresa.com"", ""contato@site.org""]
+    dominios = []
+    prefixo = """"
+    for email in emails:
+        prefixo += email.split('@')[0][0]
+        dominio = prefixo + email.split('@')[1]
+        dominios.append((email, dominio))
+    return dominios"
+Undefined,78,Undefined,loop-carried scalar 'total',"def calcular_consumo_energia():
+    dispositivos = [(""Geladeira"", 50, 24), (""TV"", 100, 5), (""Lâmpada"", 15, 10)]
+    consumos = []
+    total = 0
+    for nome, potencia, horas in dispositivos:
+        total += potencia * horas
+        consumos.append((nome, total))
+    return consumos"
+Undefined,79,Undefined,loop-carried scalar 'acumulado',"def converter_moedas():
+    valores = [100.0, 250.0, 50.0]
+    conversoes = []
+    acumulado = 0
+    for valor in valores:
+        acumulado += valor
+        conversoes.append((acumulado, acumulado / 5.20))
+    return conversoes"
+Undefined,80,Undefined,list appended to and read inside the loop,"def analisar_textos():
+    textos = [""Python é poderoso"", ""Data Science"", ""Machine Learning""]
+    analises = []
+    todas_palavras = []
+    for texto in textos:
+        palavras = texto.split()
+        todas_palavras.extend(palavras)
+        analises.append((texto, len(todas_palavras), sum(len(p) for p in todas_palavras)))
+    return analises"
+Undefined,81,Undefined,loop-carried scalar 'media_geral',"def calcular_media_notas():
+    alunos = [(""João"", [8.5, 7.0, 9.0]), (""Maria"", [9.0, 9.5, 8.5])]
+    medias = []
+    media_geral = 0
+    for i, (nome, notas) in enumerate(alunos):
+        media = sum(notas)/len(notas)
+        media_geral = (media_geral * i + media) / (i + 1)
+        medias.append((nome, media, media_geral))
+    return medias"
+Undefined,82,Undefined,loop-carried scalar 'minimo',"def verificar_estoque():
+    produtos = [(""Caneta"", 50), (""Caderno"", 20), (""Borracha"", 100)]
+    status = []
+    minimo = float('inf')
+    for nome, quantidade in produtos:
+        minimo = min(minimo, quantidade)
+        status.append((nome, ""OK"" if quantidade > minimo else ""Repor""))
+    return status"
+Undefined,83,Undefined,loop-carried scalar 'distancia_total',"def calcular_distancia_pontos():
+    pontos = [((0, 0), (3, 4)), ((1, 1), (4, 5)), ((2, 3), (5, 7))]
+    distancias = []
+    distancia_total = 0
+    for p1, p2 in pontos:
+        distancia = ((p2[0]-p1[0])**2 + (p2[1]-p1[1])**2)**0.5
+        distancia_total += distancia
+        distancias.append((p1, p2, distancia_total))
+    return distancias"
+Undefined,84,Undefined,loop-carried scalar 'erros',"def processar_logs():
+    logs = [""ERRO: Falha no sistema"", ""INFO: Usuário logado"", ""ERRO: Arquivo não encontrado""]
+    contagens = []
+    erros = 0
+    for log in logs:
+        if log.startswith(""ERRO""):
+            erros += 1
+        contagens.append((log, erros))
+    return contagens"
+Undefined,85,Undefined,loop-carried scalar 'fator',"def calcular_volumes():
+    dados = [(""Cubo"", 3), (""Esfera"", 2), (""Cilindro"", 5)]
+    volumes = []
+    fator = 1
+    for nome, valor in dados:
+        if nome == ""Cubo"":
+            volume = valor ** 3 * fator
+        elif nome == ""Esfera"":
+            volume = (4/3) * 3.14159 * valor ** 3 * fator
+        else:
+            volume = 3.14159 * valor ** 2 * 5 * fator
+        fator = volume % 10
+        volumes.append((nome, volume))
+    return volumes"
+Undefined,86,Undefined,loop-carried scalar 'ultima_categoria',"def classificar_idades():
+    idades = [12, 25, 7, 19, 30, 5]
+    categorias = []
+    ultima_categoria = """"
+    for idade in idades:
+        if idade < 13:
+            categoria = ""Criança""
+        elif idade < 20:
+            categoria = ""Adolescente""
+        elif idade < 60:
+            categoria = ""Adulto""
+        else:
+            categoria = ""Idoso""
+        if categoria == ultima_categoria:
+            categoria += "" (repetido)""
+        ultima_categoria = categoria
+        categorias.append((idade, categoria))
+    return categorias"
+Undefined,87,Undefined,loop-carried scalar 'total_corrente',"def calcular_potencia_eletrica():
+    dados = [(110, 10), (220, 5), (110, 15)]
+    potencias = []
+    total_corrente = 0
+    for tensao, corrente in dados:
+        total_corrente += corrente
+        potencias.append((tensao, total_corrente, tensao * total_corrente))
+    return potencias"
+Undefined,88,Undefined,whole-container update inside the loop,"def extrair_metadados_arquivos():
+    arquivos = [""relatorio.pdf"", ""imagem.jpg"", ""planilha.xlsx""]
+    metadados = []
+    extensoes = set()
+    for arquivo in arquivos:
+        nome, extensao = arquivo.split('.')
+        extensoes.add(extensao)
+        metadados.append((nome, extensao, len(extensoes)))
+    return metadados"
+Undefined,89,Undefined,loop-carried scalar 'combustivel_total',"def calcular_combustivel_viagem():
+    viagens = [(300, 12), (150, 10), (450, 15)]
+    consumos = []
+    combustivel_total = 0
+    for distancia, consumo_medio in viagens:
+        combustivel_total += distancia / consumo_medio
+        consumos.append((distancia, consumo_medio, combustivel_total))
+    return consumos"
+Undefined,90,Undefined,loop-carried scalar 'hash_anterior',"def gerar_hashes_simples():
+    strings = [""senha"", ""123456"", ""secreto""]
+    hashes = []
+    hash_anterior = 0
+    for s in strings:
+        hash_val = (hash_anterior + sum(ord(c) for c in s)) % 1000
+        hash_anterior = hash_val
+        hashes.append((s, hash_val))
+    return hashes"
+Undefined,91,Undefined,loop-carried scalar 'total',"def calcular_soma_ponderada():
+    valores = [10, 20, 30]
+    pesos = [0.5, 1.5, 2.0]
+    total = 0
+    resultados = []
+    for i in range(len(valores)):
+        total += valores[i] * pesos[i]
+        resultados.append((valores[i], pesos[i], total))
+    return resultados"
+Undefined,92,Undefined,loop-carried scalar 'a',"def gerar_sequencia_geometrica():
+    a = 2
+    r = 3
+    n = 5
+    sequencia = []
+    for i in range(n):
+        sequencia.append(a)
+        a *= r
+    return sequencia"
+Undefined,93,Undefined,loop-carried scalar 'linha_anterior',"def construir_triangulo_pascal():
+    linhas = 5
+    triangulo = []
+    linha_anterior = []
+    for i in range(linhas):
+        linha = [1] if i == 0 else [1] + [linha_anterior[j] + linha_anterior[j+1] for j in range(i-1)] + [1]
+        triangulo.append(linha)
+        linha_anterior = linha
+    return triangulo"
+Undefined,94,Undefined,loop-carried scalar 'acumulada',"def calcular_media_movel_ponderada_dependente():
+    valores = [10, 20, 30, 40, 50]
+    medias = []
+    acumulada = 0
+    for i in range(2, len(valores)):
+        acumulada += (valores[i-2] * 0.2 + valores[i-1] * 0.3 + valores[i] * 0.5)
+        medias.append((i, acumulada))
+    return medias"
+Undefined,95,Undefined,loop-carried scalar 'acumulado',"def codificar_diff_sequencial_dependente():
+    valores = [100, 105, 107, 110, 115]
+    diffs = [valores[0]]
+    acumulado = valores[0]
+    for i in range(1, len(valores)):
+        diferenca = valores[i] - acumulado
+        diffs.append(diferenca)
+        acumulado += diferenca  
+    return diffs"
+Undefined,96,Undefined,loop-carried scalar 'saldo',"def simular_investimento_acoes():
+    precos = [50, 52, 51, 53, 55]
+    saldo = 1000
+    historico = []
+    for p in precos:
+        saldo *= (p / precos[precos.index(p)-1]) if precos.index(p) > 0 else 1
+        historico.append((p, saldo))
+    return historico"
+Undefined,97,Undefined,loop-carried scalar 'max_atual',"def calcular_maximo_local():
+    valores = [10, 12, 15, 13, 18, 20, 17]
+    maximos = []
+    max_atual = valores[0]
+    for v in valores:
+        max_atual = max(max_atual, v)
+        maximos.append(max_atual)
+    return maximos"
+Undefined,98,Undefined,list appended to and read inside the loop,"def processar_buffer():
+    buffer = []
+    dados = [1, 2, 3, 4, 5, 6, 7, 8]
+    for i in range(len(dados)):
+        buffer.append(dados[i])
+        if len(buffer) > 3:
+            buffer.pop(0)
+    return buffer"
+Undefined,99,Undefined,live-out scalar(s): ['senha'],"def gerar_senha_sequencial():
+    caracteres = ['a', 'b', 'c', '1', '2']
+    senha = ''
+    for i in range(5):
+        senha += caracteres[ord(senha[-1]) % len(caracteres)] if senha else caracteres[0]
+    return senha"
+Undefined,100,Undefined,loop-carried scalar 'ultima_derivada',"def calcular_derivada_dependente():
+    valores = [0, 3, 6, 9, 12]
+    derivadas = []
+    ultima_derivada = 0
+    for i in range(1, len(valores)):
+        derivada = (valores[i] - valores[i-1]) + ultima_derivada
+        derivadas.append(derivada)
+        ultima_derivada = derivada
+    return derivadas"
+Undefined,101,Undefined,loop-carried scalar 'soma',"def calcular_soma_acumulativa():
+    numeros = [5, 3, 8, 2, 7]
+    soma = 0
+    resultados = []
+    for num in numeros:
+        soma += num
+        resultados.append((num, soma))
+    return resultados"
+Undefined,102,Undefined,loop-carried scalar 'a',"def gerar_sequencia_fibonacci():
+    n = 10
+    sequencia = []
+    a, b = 0, 1
+    for _ in range(n):
+        sequencia.append(a)
+        a, b = b, a + b
+    return sequencia"
+Undefined,103,Undefined,list appended to and read inside the loop,"def calcular_media_movel_dependente():
+    valores = [10, 12, 15, 13, 18, 20]
+    media_movel = [valores[0]]
+    for i in range(1, len(valores)):
+        media = (valores[i] + media_movel[i-1]) / 2  
+        media_movel.append(media)
+    return media_movel"
+Undefined,104,Undefined,live-out scalar(s): ['count'],"def codificar_rle():
+    texto = ""AAABBBCCDAA""
+    codificado = []
+    count = 1
+    for i in range(1, len(texto)):
+        if texto[i] == texto[i-1]:
+            count += 1
+        else:
+            codificado.append((texto[i-1], count))
+            count = 1
+    codificado.append((texto[-1], count))
+    return codificado"
+Undefined,105,Undefined,loop-carried scalar 'saldo',"def processar_transacoes():
+    saldo = 1000
+    transacoes = [200, -50, 300, -100]
+    historico = []
+    for valor in transacoes:
+        saldo += valor
+        historico.append((valor, saldo))
+    return historico"
+Undefined,106,Undefined,loop-carried scalar 'linha_anterior',"def construir_triangulo_pascal():
+    linhas = 5
+    triangulo = []
+    linha_anterior = []
+    for i in range(linhas):
+        linha = [1] if i == 0 else [1] + [linha_anterior[j] + linha_anterior[j+1] for j in range(i-1)] + [1]
+        triangulo.append(linha)
+        linha_anterior = linha
+    return triangulo"
+Undefined,107,Undefined,loop-carried scalar 'capital',"def simular_juros_compostos():
+    capital = 1000
+    taxa = 0.05
+    resultados = []
+    for mes in range(1, 13):
+        capital *= (1 + taxa)
+        resultados.append((mes, capital))
+    return resultados"
+Undefined,108,Parallelizable,no cross-iteration dependence observed,"def codificar_diff():
+    valores = [100, 105, 107, 110, 115]
+    diffs = [valores[0]]
+    for i in range(1, len(valores)):
+        diffs.append(valores[i] - valores[i-1])
+    return diffs"
+Undefined,109,Undefined,loop-carried scalar 'max_atual',"def calcular_maximo_local():
+    valores = [10, 12, 15, 13, 18, 20, 17]
+    max_atual = valores[0]
+    maximos = []
+    for v in valores:
+        max_atual = max(max_atual, v)
+        maximos.append(max_atual)
+    return maximos"
+Undefined,110,Undefined,live-out scalar(s): ['senha'],"def gerar_senha_sequencial():
+    caracteres = ['a', 'b', 'c', '1', '2']
+    senha = caracteres[0]
+    for i in range(1, 5):
+        senha += caracteres[ord(senha[-1]) % len(caracteres)]
+    return senha"
+Undefined,111,Undefined,list appended to and read inside the loop,"def calcular_prefix_sum():
+    dados = [3, 1, 7, 0, 4, 1, 6]
+    prefix_sum = [dados[0]]
+    for i in range(1, len(dados)):
+        prefix_sum.append(prefix_sum[i-1] + dados[i])
+    return prefix_sum"
+Undefined,112,Undefined,loop-carried scalar 'estado_atual',"def simular_cadeia_markov():
+    import random
+    estados = ['A', 'B', 'C']
+    transicoes = {'A': {'A':0.1, 'B':0.6, 'C':0.3},
+                 'B': {'A':0.5, 'B':0.2, 'C':0.3},
+                 'C': {'A':0.4, 'B':0.1, 'C':0.5}}
+    estado_atual = 'A'
+    sequencia = [estado_atual]
+    for _ in range(10):
+        prob = random.random()
+        acumulado = 0
+        for prox_estado, p in transicoes[estado_atual].items():
+            acumulado += p
+            if prob <= acumulado:
+                estado_atual = prox_estado
+                break
+        sequencia.append(estado_atual)
+    return sequencia"
+Undefined,113,Undefined,list appended to and read inside the loop,"def processar_buffer_circular():
+    buffer = []
+    dados = [1, 2, 3, 4, 5, 6, 7, 8]
+    for i in range(len(dados)):
+        buffer.append(dados[i])
+        if len(buffer) > 3:
+            buffer.pop(0)
+    return buffer"
+Undefined,114,Undefined,loop-carried scalar 'acumulado',"def calcular_derivada_numerica_dependente():
+    valores = [0, 3, 6, 9, 12]
+    derivadas = []
+    acumulado = 0
+    for i in range(1, len(valores)):
+        acumulado += valores[i] - valores[i-1]  
+        derivadas.append(acumulado)
+    return derivadas"
+Undefined,115,Undefined,list appended to and read inside the loop,"def simular_fila_atendimento():
+    tempo_chegada = [1, 3, 5, 7]
+    tempo_servico = [2, 4, 1, 3]
+    tempo_saida = []
+    for i in range(len(tempo_chegada)):
+        inicio = max(tempo_chegada[i], tempo_saida[i-1] if i > 0 else 0)
+        tempo_saida.append(inicio + tempo_servico[i])
+    return tempo_saida"
+Undefined,116,Undefined,while loop: iteration space depends on state,"def gerar_sequencia_collatz():
+    n = 10
+    sequencia = [n]
+    while n != 1:
+        n = n // 2 if n % 2 == 0 else 3 * n + 1
+        sequencia.append(n)
+    return sequencia"
+Undefined,117,Undefined,list appended to and read inside the loop,"def calcular_serie_temporal():
+    valores = [10, 12, 11, 13, 15]
+    suavizados = [valores[0]]
+    alpha = 0.3
+    for i in range(1, len(valores)):
+        novo_valor = alpha * valores[i] + (1 - alpha) * suavizados[i-1]
+        suavizados.append(novo_valor)
+    return suavizados"
+Undefined,118,Undefined,loop-carried scalar 'contador',"def verificar_balanceamento_dependente():
+    expressoes = [""(a+b)"", ""(x*(y+z))"", ""(()))""]
+    resultados = []
+    contador = 0  
+    for exp in expressoes:
+        balanceado = True
+        for char in exp:
+            if char == '(':
+                contador += 1
+            elif char == ')':
+                contador -= 1
+            if contador < 0:
+                balanceado = False
+                break
+        resultados.append((exp, balanceado and contador == 0))
+    return resultados"
+Undefined,119,Undefined,loop-carried scalar 'contagem',"def simular_contador_estados():
+    estados = [True, False, True, True, False]
+    contagem = 0
+    historico = []
+    for estado in estados:
+        contagem = contagem + 1 if estado else max(0, contagem - 1)
+        historico.append(contagem)
+    return historico"
+Undefined,120,Undefined,loop-carried scalar 'ultima_diff',"def calcular_diferenca_anterior_dependente():
+    valores = [10, 15, 13, 18, 22]
+    diffs = []
+    ultima_diff = 0
+    for i in range(len(valores)):
+        diff = valores[i] - (valores[i-1] if i > 0 else 0) + ultima_diff
+        diffs.append(diff)
+        ultima_diff = diff
+    return diffs"
+Undefined,121,Undefined,list appended to and read inside the loop,"def processar_stack_operacoes():
+    stack = []
+    operacoes = [('push', 5), ('push', 3), ('pop', None), ('push', 7)]
+    resultados = []
+    for op, val in operacoes:
+        if op == 'push':
+            stack.append(val)
+        elif op == 'pop':
+            stack.pop()
+        resultados.append(list(stack))
+    return resultados"
+Undefined,122,Undefined,loop-carried scalar 'z',"def gerar_sequencia_mandelbrot():
+    c = complex(0.3, 0.5)
+    z = 0
+    sequencia = []
+    for _ in range(10):
+        z = z**2 + c
+        sequencia.append(z)
+    return sequencia"
+Undefined,123,Undefined,loop-carried scalar 'estimativa',"def calcular_raiz_quadrada_newton():
+    num = 25
+    estimativa = num / 2
+    historico = []
+    for _ in range(5):
+        estimativa = (estimativa + num / estimativa) / 2
+        historico.append(estimativa)
+    return historico"
+Undefined,124,Undefined,live-out scalar(s): ['w'],"def codificar_lzw():
+    texto = ""ABABABAB""
+    dicionario = {chr(i): i for i in range(256)}
+    proximo_codigo = 256
+    codificacao = []
+    w = """"
+    for c in texto:
+        wc = w + c
+        if wc in dicionario:
+            w = wc
+        else:
+            codificacao.append(dicionario[w])
+            dicionario[wc] = proximo_codigo
+            proximo_codigo += 1
+            w = c
+    if w:
+        codificacao.append(dicionario[w])
+    return codificacao"
+Undefined,125,Undefined,loop-carried scalar 'estado_atual',"def simular_autômato_finito():
+    estados = {'A': {'0':'A', '1':'B'},
+              'B': {'0':'C', '1':'B'},
+              'C': {'0':'A', '1':'B'}}
+    estado_atual = 'A'
+    entrada = ""011001""
+    caminho = [estado_atual]
+    for simbolo in entrada:
+        estado_atual = estados[estado_atual][simbolo]
+        caminho.append(estado_atual)
+    return caminho"
+Undefined,126,Undefined,loop-carried scalar 'soma',"def calcular_histograma_cumulativo():
+    dados = [1, 3, 2, 4, 1, 3, 2]
+    histograma = {}
+    cumulativo = {}
+    soma = 0
+    for val in dados:
+        histograma[val] = histograma.get(val, 0) + 1
+        soma += val
+        cumulativo[val] = cumulativo.get(val, 0) + soma
+    return cumulativo"
+Undefined,127,Undefined,loop-carried scalar 'saldo',"def simular_investimento_acoes():
+    precos = [50, 52, 51, 53, 55]
+    saldo = 1000
+    historico = []
+    for i in range(len(precos)):
+        if i > 0:
+            saldo *= (precos[i] / precos[i-1])
+        historico.append((precos[i], saldo))
+    return historico"
+Undefined,128,Undefined,loop-carried scalar 'fim_anterior',"def verificar_intervalos_sobrepostos():
+    intervalos = [(1,3), (2,5), (4,6), (7,9)]
+    resultados = []
+    fim_anterior = float('-inf')
+    for inicio, fim in intervalos:
+        resultados.append((inicio > fim_anterior, inicio, fim))
+        fim_anterior = fim
+    return resultados"
+Undefined,129,Undefined,live-out scalar(s): ['hash_val'],"def gerar_hash_incremental():
+    texto = ""python""
+    hash_val = 0
+    for i, char in enumerate(texto):
+        hash_val = (hash_val * 31 + ord(char)) % 1000
+    return hash_val"
+Undefined,130,Undefined,live-out scalar(s): ['entropia'],"import math
+
+def calcular_entropia_shannon_dependente():
+    texto = ""aabbbccde""
+    entropia = 0
+    total = len(texto)
+    for i, c in enumerate(set(texto), start=1):
+        p = texto.count(c) / total
+        entropia = (entropia + (-p * math.log2(p))) / i 
+    return entropia"
+Undefined,131,Undefined,loop-carried scalar 'total',"def calcular_soma_ponderada():
+    valores = [10, 20, 30]
+    pesos = [0.5, 1.5, 2.0]
+    total = 0
+    resultados = []
+    for i in range(len(valores)):
+        total += valores[i] * pesos[i]
+        resultados.append((valores[i], pesos[i], total))
+    return resultados"
+Undefined,132,Undefined,loop-carried scalar 'a',"def gerar_sequencia_geometrica():
+    a = 2
+    r = 3
+    sequencia = []
+    for _ in range(5):
+        sequencia.append(a)
+        a *= r
+    return sequencia"
+Undefined,133,Undefined,loop-carried scalar 'saldo',"def calcular_saldo_contabil():
+    transacoes = [100, -50, 200, -30]
+    saldo = 500
+    historico = []
+    for t in transacoes:
+        saldo += t
+        historico.append((t, saldo))
+    return historico"
+Undefined,134,Undefined,loop-carried scalar 'acumulado',"def construir_sequencia_triangular_dependente():
+    sequencia = []
+    acumulado = 0
+    for n in range(1, 6):
+        acumulado += n
+        sequencia.append(acumulado)
+    return sequencia"
+Undefined,135,Undefined,loop-carried scalar 'capital',"def calcular_juros_sobre_juros():
+    capital = 1000
+    resultados = []
+    for mes in range(1, 6):
+        capital *= 1.1
+        resultados.append((mes, capital))
+    return resultados"
+Undefined,136,Undefined,loop-carried scalar 'saldo',"def simular_rendimento_fundo():
+    aportes = [100, 200, 150]
+    rendimento = 0.05
+    saldo = 0
+    historico = []
+    for aporte in aportes:
+        saldo = (saldo + aporte) * (1 + rendimento)
+        historico.append((aporte, saldo))
+    return historico"
+Undefined,137,Undefined,loop-carried scalar 'ultimo_cod',"def gerar_codigo_incremental():
+    produtos = [""mouse"", ""teclado"", ""monitor""]
+    codigos = []
+    ultimo_cod = 1000
+    for p in produtos:
+        ultimo_cod += 1
+        codigos.append((p, f""COD{ultimo_cod}""))
+    return codigos"
+Undefined,138,Undefined,loop-carried scalar 'soma_ponderada',"def calcular_media_ponderada_acumulada():
+    valores = [10, 20, 30]
+    pesos = [1, 2, 3]
+    soma_ponderada = 0
+    soma_pesos = 0
+    resultados = []
+    for v, p in zip(valores, pesos):
+        soma_ponderada += v * p
+        soma_pesos += p
+        resultados.append((v, p, soma_ponderada/soma_pesos))
+    return resultados"
+Undefined,139,Undefined,loop-carried scalar 'principal',"def simular_emprestimo():
+    principal = 10000
+    taxa = 0.01
+    pagamentos = []
+    for mes in range(1, 4):
+        juros = principal * taxa
+        principal -= 3000
+        pagamentos.append((mes, juros, principal))
+    return pagamentos"
+Undefined,140,Undefined,list appended to and read inside the loop,"def gerar_sequencia_padrao():
+    seq = [1]
+    for _ in range(5):
+        seq.append(seq[-1] * 2 + 1)
+    return seq"
+Undefined,141,Undefined,loop-carried scalar 'soma',"def calcular_soma_exponencial():
+    numeros = [1, 2, 3, 4]
+    soma = 0
+    resultados = []
+    for n in numeros:
+        soma += 2**n
+        resultados.append((n, soma))
+    return resultados"
+Undefined,142,Undefined,loop-carried scalar 'fat',"def gerar_sequencia_fatorial():
+    sequencia = []
+    fat = 1
+    for n in range(1, 6):
+        fat *= n
+        sequencia.append((n, fat))
+    return sequencia"
+Undefined,143,Parallelizable,no cross-iteration dependence observed,"def calcular_media_movel_ponderada():
+    valores = [10, 12, 15, 18, 20]
+    medias = []
+    for i in range(2, len(valores)):
+        media = (valores[i-2]*0.2 + valores[i-1]*0.3 + valores[i]*0.5)
+        medias.append(media)
+    return medias"
+Undefined,144,Undefined,loop-carried scalar 'populacao',"def simular_crescimento_populacional():
+    populacao = 1000
+    taxa = 0.1
+    historico = []
+    for ano in range(1, 6):
+        populacao *= (1 + taxa)
+        historico.append((ano, populacao))
+    return historico"
+Undefined,145,Parallelizable,no cross-iteration dependence observed,"def codificar_sequencia_diferencial():
+    valores = [5, 8, 12, 15, 20]
+    diffs = [valores[0]]
+    for i in range(1, len(valores)):
+        diffs.append(valores[i] - valores[i-1])
+    return diffs"
+Undefined,146,Undefined,loop-carried scalar 'saldo',"def calcular_saldo_investimento():
+    aportes = [1000, 500, 800]
+    rendimento = 0.08
+    saldo = 0
+    historico = []
+    for aporte in aportes:
+        saldo = (saldo + aporte) * (1 + rendimento)
+        historico.append((aporte, saldo))
+    return historico"
+Undefined,147,Undefined,loop-carried scalar 'ultimo',"def gerar_codigo_sequencial():
+    produtos = [""Tablet"", ""Smartphone"", ""Laptop""]
+    codigos = []
+    ultimo = 1000
+    for produto in produtos:
+        ultimo += 5
+        codigos.append((produto, f""DEV{ultimo}""))
+    return codigos"
+Undefined,148,Undefined,loop-carried scalar 'razao',"def calcular_razao_acumulada():
+    numeros = [2, 4, 6, 8]
+    razao = 1
+    resultados = []
+    for n in numeros:
+        razao *= n
+        resultados.append((n, razao))
+    return resultados"
+Undefined,149,Undefined,loop-carried scalar 'principal',"def simular_amortizacao_emprestimo():
+    principal = 20000
+    taxa = 0.015
+    pagamentos = []
+    for mes in range(1, 7):
+        juros = principal * taxa
+        principal -= 3500
+        pagamentos.append((mes, juros, principal))
+    return pagamentos"
+Undefined,150,Undefined,list appended to and read inside the loop,"def gerar_sequencia_recursiva():
+    seq = [2]
+    for _ in range(6):
+        seq.append(seq[-1] * 3 - 1)
+    return seq"
+Undefined,151,Undefined,loop-carried scalar 'media_accum',"def calcular_variancia_accumulada():
+    valores = [10, 15, 20, 25]
+    media_accum = valores[0]
+    variancias = []
+    for i in range(1, len(valores)):
+        media_accum = (media_accum + valores[i]) / 2
+        variancias.append(media_accum)
+    return variancias"
+Undefined,152,Undefined,live-out scalar(s): ['buffer'],"def processar_buffer_fifo():
+    buffer = []
+    dados = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    for i in range(len(dados)):
+        buffer.append(dados[i])
+        if len(buffer) > 4:
+            buffer = buffer[1:]
+    return buffer"
+Undefined,153,Undefined,loop-carried scalar 'capital',"def calcular_juros_compostos_continuos():
+    capital = 5000
+    taxa = 0.07
+    resultados = []
+    for ano in range(1, 6):
+        capital *= (1 + taxa)**ano
+        resultados.append((ano, capital))
+    return resultados"
+Undefined,154,Undefined,live-out scalar(s): ['senha'],"def gerar_senha_cumulativa():
+    caracteres = ['a', 'b', 'c', '1', '2', '3']
+    senha = caracteres[0]
+    for i in range(1, 6):
+        senha += caracteres[(ord(senha[-1]) + i) % len(caracteres)]
+    return senha"
+Undefined,155,Undefined,loop-carried scalar 'total_ponderado',"def calcular_peso_ponderado_accumulado():
+    valores = [10, 20, 30, 40]
+    pesos = [1, 2, 3, 4]
+    total_ponderado = 0
+    resultados = []
+    for i in range(len(valores)):
+        total_ponderado += valores[i] * pesos[i]
+        resultados.append(total_ponderado)
+    return resultados"
+Undefined,156,Undefined,loop-carried scalar 'estoque',"def simular_cadeia_producao():
+    estoque = 100
+    demandas = [20, 30, 25, 40]
+    historico = []
+    for demanda in demandas:
+        estoque = max(0, estoque - demanda)
+        historico.append((demanda, estoque))
+    return historico"
+Undefined,157,Parallelizable,no cross-iteration dependence observed,"def calcular_derivada_segunda():
+    valores = [0, 2, 6, 12, 20]
+    derivadas = []
+    for i in range(2, len(valores)):
+        derivada = valores[i] - 2*valores[i-1] + valores[i-2]
+        derivadas.append(derivada)
+    return derivadas"
+Undefined,158,Undefined,loop-carried scalar 'checksum',"def gerar_checksum():
+    dados = [65, 66, 67, 68]
+    checksum = 0
+    resultados = []
+    for byte in dados:
+        checksum = (checksum + byte) % 256
+        resultados.append((byte, checksum))
+    return resultados"
+Undefined,159,Undefined,loop-carried scalar 'produto',"def calcular_media_geometrica_accumulada():
+    numeros = [2, 4, 8, 16]
+    produto = 1
+    resultados = []
+    for i, n in enumerate(numeros, 1):
+        produto *= n
+        resultados.append((n, produto**(1/i)))
+    return resultados"
+Undefined,160,Undefined,loop-carried scalar 'tempo_atual',"def simular_fila_prioridade():
+    processos = [(""P1"", 5), (""P2"", 3), (""P3"", 8)]
+    tempo_atual = 0
+    resultados = []
+    for processo, duracao in processos:
+        tempo_atual += duracao
+        resultados.append((processo, tempo_atual))
+    return resultados"
+Undefined,161,Undefined,loop-carried scalar 'integral',"def calcular_integral_numerica():
+    valores = [0, 1, 4, 9, 16]
+    integral = 0
+    resultados = []
+    for i in range(1, len(valores)):
+        integral += (valores[i] + valores[i-1]) / 2
+        resultados.append(integral)
+    return resultados"
+Undefined,162,Undefined,loop-carried scalar 'hash_val',"def gerar_hash_cumulativo():
+    texto = ""dados""
+    hash_val = 0
+    resultados = []
+    for char in texto:
+        hash_val = (hash_val * 31 + ord(char)) % 1000
+        resultados.append((char, hash_val))
+    return resultados"
+Undefined,163,Undefined,loop-carried scalar 'b',"def calcular_razao_aurea_sequencial():
+    a, b = 1, 1
+    sequencia = []
+    for _ in range(8):
+        a, b = b, a + b
+        sequencia.append(b/a)
+    return sequencia"
+Undefined,164,Undefined,loop-carried scalar 'material',"def simular_compostagem_continua():
+    material = 1000
+    taxa = 0.15
+    resultados = []
+    for dia in range(1, 8):
+        material *= (1 - taxa)
+        resultados.append((dia, material))
+    return resultados"
+Undefined,165,Undefined,loop-carried scalar 'diff_accum',"def calcular_diferenca_percentual_accumulada():
+    valores = [100, 120, 90, 110]
+    diff_accum = 0
+    resultados = []
+    for i in range(1, len(valores)):
+        diff = (valores[i] - valores[i-1]) / valores[i-1]
+        diff_accum += diff
+        resultados.append(diff_accum)
+    return resultados"
+Undefined,166,Undefined,loop-carried scalar 'verificador',"def gerar_codigo_verificacao():
+    numeros = [123, 456, 789]
+    codigos = []
+    verificador = 0
+    for num in numeros:
+        verificador = (verificador + num % 10) % 10
+        codigos.append((num, verificador))
+    return codigos"
+Undefined,167,Undefined,loop-carried scalar 'volatilidade',"def calcular_volatilidade_accumulada():
+    precos = [50, 52, 48, 55, 53]
+    volatilidade = 0
+    resultados = []
+    for i in range(1, len(precos)):
+        variacao = abs(precos[i] - precos[i-1]) / precos[i-1]
+        volatilidade += variacao
+        resultados.append(volatilidade)
+    return resultados"
+Undefined,168,Undefined,loop-carried scalar 'qualidade',"def simular_degradacao():
+    qualidade = 100
+    taxas = [0.1, 0.2, 0.15, 0.25]
+    historico = []
+    for taxa in taxas:
+        qualidade *= (1 - taxa)
+        historico.append((taxa, qualidade))
+    return historico"
+Undefined,169,Undefined,loop-carried scalar 'soma_xy',"def calcular_correlacao_accumulada():
+    x = [1, 2, 3, 4]
+    y = [2, 4, 6, 8]
+    soma_xy = 0
+    resultados = []
+    for i in range(len(x)):
+        soma_xy += x[i] * y[i]
+        resultados.append(soma_xy)
+    return resultados"
+Undefined,170,Undefined,loop-carried scalar 'x',"def gerar_sequencia_logistica():
+    x = 0.5
+    r = 3.7
+    sequencia = []
+    for _ in range(10):
+        x = r * x * (1 - x)
+        sequencia.append(x)
+    return sequencia"

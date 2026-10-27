@@ -1,0 +1,2 @@
+runs,same_epoch,fpr_loss_rule_mean,fpr_fpr_rule_mean,fpr_wilcoxon_p,acc_loss_rule_mean,acc_fpr_rule_mean,acc_wilcoxon_p,recall_loss_rule_mean,recall_fpr_rule_mean,recall_wilcoxon_p
+30,17,0.006401747295244339,0.006162903655984994,0.7531523647659145,0.9941632654510085,0.994123535725137,0.6773318478512569,0.994734434958015,0.994415814433097,0.6741416549927048

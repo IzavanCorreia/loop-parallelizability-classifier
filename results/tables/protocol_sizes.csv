@@ -1,0 +1,4 @@
+setting,n_train_mean,n_val_mean,n_test_mean,real_train_mean,real_val_mean,real_test_mean,real_share_train,val_neg_mean
+hybrid,6005.0,1501.0,834.0,245.53333333333333,60.46666666666667,34.0,0.04088817899279868,749.4333333333333
+real,245.2,60.8,34.0,245.2,60.8,34.0,1.0,29.833333333333332
+syn2real,6400.0,1600.0,340.0,0.0,0.0,340.0,0.0,800.0

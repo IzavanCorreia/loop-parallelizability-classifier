@@ -1,0 +1,341 @@
+original_class,original_index,class,oracle,category,nested_loops
+Parallelizable,1,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,2,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,3,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,4,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,5,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,6,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,7,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,8,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,9,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,10,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,11,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,12,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,13,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,14,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,15,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,16,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,17,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,18,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,19,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,20,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,21,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,22,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,23,Parallelizable,Parallelizable,"explicit loop, map with append",True
+Parallelizable,24,Undefined,Undefined,output list read inside the loop,False
+Parallelizable,25,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,26,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,27,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,28,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,29,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,30,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,31,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,32,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,33,Parallelizable,Parallelizable,"explicit loop, writes to own position",False
+Parallelizable,34,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,35,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,36,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,37,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,38,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,39,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,40,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,41,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,42,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,43,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,44,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,45,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,46,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,47,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,48,Parallelizable,n/a,not executed (side effects),False
+Parallelizable,49,Parallelizable,Parallelizable,"explicit loop, map with append",True
+Parallelizable,50,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,51,Parallelizable,Parallelizable,"explicit loop, writes to own position",False
+Parallelizable,52,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,53,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,54,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,55,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,56,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,57,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,58,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,59,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,60,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,61,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,62,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,63,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,64,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,65,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,66,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,67,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,68,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,69,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,70,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,71,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,72,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,73,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,74,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,75,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,76,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,77,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,78,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,79,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,80,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,81,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,82,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,83,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,84,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,85,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,86,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,87,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,88,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,89,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,90,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,91,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,92,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,93,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,94,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,95,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,96,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,97,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,98,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,99,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,100,Parallelizable,Parallelizable,comprehension (map),False
+Parallelizable,101,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,102,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,103,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,104,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,105,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,106,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,107,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,108,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,109,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,110,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,111,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,112,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,113,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,114,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,115,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,116,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,117,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,118,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,119,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,120,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,121,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,122,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,123,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,124,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,125,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,126,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,127,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,128,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,129,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,130,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,131,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,132,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,133,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,134,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,135,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,136,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,137,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,138,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,139,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,140,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,141,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,142,Parallelizable,Parallelizable,"explicit loop, map with append",True
+Parallelizable,143,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,144,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,145,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,146,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,147,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,148,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,149,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,150,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,151,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,152,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,153,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,154,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,155,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,156,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,157,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,158,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,159,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,160,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,161,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,162,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,163,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,164,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,165,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,166,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,167,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,168,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,169,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Parallelizable,170,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Undefined,1,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,2,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,3,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,4,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,5,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),True
+Undefined,6,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,7,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,8,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,9,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,10,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,11,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,12,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,13,Undefined,Undefined,output list read inside the loop,False
+Undefined,14,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,15,Undefined,Undefined,output list read inside the loop,False
+Undefined,16,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Undefined,17,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,18,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Undefined,19,Undefined,Undefined,container element shared between iterations,False
+Undefined,20,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,21,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,22,Undefined,Undefined,output list read inside the loop,False
+Undefined,23,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,24,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,25,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,26,Undefined,Undefined,while loop,False
+Undefined,27,Undefined,Undefined,container element shared between iterations,True
+Undefined,28,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,29,Undefined,Undefined,while loop,False
+Undefined,30,Undefined,n/a,recursion (no loop statement),False
+Undefined,31,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,32,Undefined,n/a,recursion (no loop statement),False
+Undefined,33,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,34,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,35,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),True
+Undefined,36,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,37,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,38,Undefined,Undefined,container element shared between iterations,False
+Undefined,39,Undefined,Undefined,container element shared between iterations,True
+Undefined,40,Undefined,Undefined,container element shared between iterations,False
+Undefined,41,Undefined,Undefined,container element shared between iterations,True
+Undefined,42,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,43,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,44,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,45,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,46,Parallelizable,Parallelizable,"explicit loop, map with append",True
+Undefined,47,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,48,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,49,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),True
+Undefined,50,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),True
+Undefined,51,Undefined,Undefined,output list read inside the loop,False
+Undefined,52,Undefined,Undefined,container element shared between iterations,False
+Undefined,53,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,54,Undefined,Undefined,output list read inside the loop,False
+Undefined,55,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,56,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,57,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,58,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,59,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,60,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,61,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,62,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,63,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),True
+Undefined,64,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,65,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,66,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,67,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,68,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,69,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,70,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,71,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,72,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,73,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,74,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,75,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,76,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,77,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,78,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,79,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,80,Undefined,Undefined,output list read inside the loop,False
+Undefined,81,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,82,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,83,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,84,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,85,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,86,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,87,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,88,Undefined,Undefined,container element shared between iterations,False
+Undefined,89,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,90,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,91,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,92,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,93,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,94,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,95,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,96,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,97,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,98,Undefined,Undefined,output list read inside the loop,False
+Undefined,99,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,100,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,101,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,102,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,103,Undefined,Undefined,output list read inside the loop,False
+Undefined,104,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,105,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,106,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,107,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,108,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Undefined,109,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,110,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,111,Undefined,Undefined,output list read inside the loop,False
+Undefined,112,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),True
+Undefined,113,Undefined,Undefined,output list read inside the loop,False
+Undefined,114,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,115,Undefined,Undefined,output list read inside the loop,False
+Undefined,116,Undefined,Undefined,while loop,False
+Undefined,117,Undefined,Undefined,output list read inside the loop,False
+Undefined,118,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),True
+Undefined,119,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,120,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,121,Undefined,Undefined,output list read inside the loop,False
+Undefined,122,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,123,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,124,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,125,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,126,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,127,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,128,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,129,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,130,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,131,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,132,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,133,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,134,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,135,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,136,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,137,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,138,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,139,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,140,Undefined,Undefined,output list read inside the loop,False
+Undefined,141,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,142,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,143,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Undefined,144,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,145,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Undefined,146,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,147,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,148,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,149,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,150,Undefined,Undefined,output list read inside the loop,False
+Undefined,151,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,152,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,153,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,154,Undefined,Undefined,value used after the loop (live-out),False
+Undefined,155,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,156,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,157,Parallelizable,Parallelizable,"explicit loop, map with append",False
+Undefined,158,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,159,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,160,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,161,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,162,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,163,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,164,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,165,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,166,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,167,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,168,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,169,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False
+Undefined,170,Undefined,Undefined,scalar carried between iterations (accumulator/recurrence),False

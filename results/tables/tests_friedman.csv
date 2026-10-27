@@ -1,0 +1,3 @@
+setting,test,statistic,p,n
+hybrid,"Friedman (accuracy, all models)",112.73566569484942,1.081874556778306e-22,30
+real,"Friedman (accuracy, all models)",112.04975124378113,1.5108306395779739e-22,30
