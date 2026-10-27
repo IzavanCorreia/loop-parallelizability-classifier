@@ -1,0 +1,49 @@
+% Figure 1: overview of the approach. Compiled by fig_pipeline.py; 16 cm wide, the text width of the manuscript.
+\documentclass[border=1pt]{standalone}
+\input{figstyle}
+
+\newlength{\bw}\setlength{\bw}{3.28cm}      % text width of a box; outer width 3.52 cm
+% box content: bold title, then the lines of #2 (separated by \\), top-aligned in a box of fixed height
+\newcommand{\content}[2]{\begin{minipage}[t][1.62cm][t]{\bw}\centering
+  {\fontsize{8.2}{10}\selectfont\bfseries\color{ink}#1\par}\vspace{3pt}
+  {\fontsize{7.5}{9.2}\selectfont\color{ink2}#2\par}\end{minipage}}
+\tikzset{note/.style={font=\fontsize{7.5}{9}\selectfont\itshape, text=ink2}}
+
+\begin{document}
+\begin{tikzpicture}
+  % columns start at 0, 4.07, 8.14 and 12.46 cm; rows at 0 and -2.66 cm
+  \node[box] (ga) at (0, 0) {\content{Genetic algorithm}{DEAP, 10,000 genomes\\50 generations\\
+    genome \arr{} loop pair\\9 loop families}};
+  \node[box] (oracle) at (4.07, 0) {\content{Dependence oracle}{runs each loop\\iteration by iteration\\
+    confirms the label}};
+  \node[box] (syn) at (8.14, 0) {\content{Synthetic set}{4,000 minimal pairs\\(8,000 loops)\\
+    same names and data\\in both loops}};
+  \node[accentbox] (models) at (12.46, 0) {\content{Models}{\textcolor{accent}{\bfseries DistilBERT}\\LR, SVM, DNN, CNN\\(previous study)\\
+    n-gram LR}};
+
+  \node[box] (real) at (0, -2.66) {\content{Real-world loops}{340 Python snippets\\public repositories\\
+    researchers' labels}};
+  \node[box] (check) at (4.07, -2.66) {\content{Oracle check}{agreement 97.6\%\\Cohen's kappa 0.953\\
+    8 labels adjudicated}};
+  \node[box] (realset) at (8.14, -2.66) {\content{Real-world set}{176 Parallelizable\\164 Undefined}};
+  \node[box] (eval) at (12.46, -2.66) {\content{Evaluation}{hybrid\\synthetic \arr{} real\\real only\\
+    FPR, AUC, thresholds}};
+
+  % data flow
+  \draw[flow] (ga) -- (oracle);
+  \draw[flow] (oracle) -- (syn);
+  \draw[flow] (real) -- (check);
+  \draw[flow] (check) -- (realset);
+  \coordinate (join) at ($(syn.east)!0.5!(models.west)$);
+  \draw[line] (syn.east) -- (join);
+  \draw[line] (realset.east) -| (join);
+  \fill[ink2] (join) circle (1.6pt);
+  \draw[flow] (join) -- (models.west);
+  \draw[flow] (models) -- (eval);
+
+  % the oracle verdict enters the fitness; the same oracle checks the real-world labels
+  \draw[link] (oracle.north) -- ++(0, 0.45) -| node[pos=0.25, above=1pt, note] {valid pairs get a higher fitness}
+    (ga.north);
+  \draw[link] (oracle) -- node[right=2pt, note] {same oracle} (check);
+\end{tikzpicture}
+\end{document}

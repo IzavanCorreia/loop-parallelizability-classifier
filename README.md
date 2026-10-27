@@ -6,8 +6,11 @@ This repository contains the data, code and raw results of the manuscript
 generation and evaluation on real-world code**
 Izavan dos S. Correia, Henrique C. T. Santos, Tiago A. E. Ferreira (manuscript under review).
 
-Version 2.0.0 corresponds to this manuscript. The releases v1.x contain the data and code of an earlier version
-of this work, posted on arXiv (https://arxiv.org/abs/2603.30040).
+Version 2.0.1 corresponds to this manuscript. It has the same data, models and raw results as v2.0.0 and
+updates the analysis to the submitted text: the Friedman and Wilcoxon tests on the synthetic test samples of the
+hybrid scenario and on the real-only scenario, the tables, and Figure 1 and the graphical abstract, now drawn in
+TikZ. The releases v1.x contain the data and code of an earlier version of this work, posted on arXiv
+(https://arxiv.org/abs/2603.30040).
 
 ## Overview
 
@@ -50,8 +53,9 @@ code/
                oracle.py (dynamic dependence oracle), test_oracle.py (24 hand-labeled cases)
   experiments/ run.py (one model, one scenario), common.py (data and partitions), classic.py (models of
                the previous study and n-gram reference), bert.py (DistilBERT), summarize.py (tables and
-               statistics), make_tables.py, figures.py, fig_pipeline.py, fig_graphical_abstract.py,
-               launch_cpu.sh, launch_gpu.sh
+               statistics), make_tables.py, figures.py (data plots), fig_pipeline.py and
+               fig_graphical_abstract.py (TikZ diagrams: fig_pipeline.tex, graphical_abstract.tex,
+               figstyle.tex, compiled by tikz.py), launch_cpu.sh, launch_gpu.sh
   audit/       oracle_on_real.py (oracle on the real-world loops, Cohen's kappa),
                real_dependence_types.py (dependence types), synthetic_rules.py (one-line surface rules)
 results/
@@ -74,6 +78,10 @@ pip install -r requirements.txt
 
 DistilBERT was trained on an NVIDIA GeForce RTX 3050 laptop GPU with 6 GB of memory (about 8 minutes per fold of
 the hybrid scenario). The other models run on the CPU.
+
+The two diagrams (Figure 1 and the graphical abstract) need `pdflatex` with the `pgf`, `standalone` and `dejavu`
+packages, on the PATH or in the folder given by the `TEX_BIN` environment variable. The PNG of the graphical
+abstract also needs `pypdfium2` (optional).
 
 ## Reproducing the study
 
@@ -115,6 +123,8 @@ All commands run from the repository root.
    python code/experiments/summarize.py
    python code/experiments/make_tables.py
    python code/experiments/figures.py
+   python code/experiments/fig_pipeline.py
+   python code/experiments/fig_graphical_abstract.py
    ```
 
    - `summarize.py` writes `results/tables`.
@@ -133,7 +143,7 @@ Data and code (Zenodo):
   author    = {Izavan dos S. Correia and Henrique C. T. Santos and Tiago A. E. Ferreira},
   title     = {IzavanCorreia/loop-parallelizability-classifier: Data and code},
   year      = {2026},
-  version   = {v2.0.0},
+  version   = {v2.0.1},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.21013787},
   url       = {https://doi.org/10.5281/zenodo.21013787}

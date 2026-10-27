@@ -155,14 +155,17 @@ def holm(pvals):
     return adj
 
 
-def stats_tests(df, setting):
+def stats_tests(df, setting, label=None):
+    """Friedman over all models and Wilcoxon (Holm) of DistilBERT against each model on fold-level accuracy;
+    the corrected resampled t-test is also computed. label names the rows (defaults to the setting)."""
+    label = label or setting
     out = []
     piv = df.pivot_table(index=["rep", "fold"], columns="model", values="accuracy")
     models = [m for m in MODELS if m in piv.columns]
     piv = piv[models].dropna()
     if len(models) >= 3 and len(piv) > 2:
         chi, p = stats.friedmanchisquare(*[piv[m] for m in models])
-        out.append({"setting": setting, "test": "Friedman (accuracy, all models)", "statistic": chi, "p": p, "n": len(piv)})
+        out.append({"setting": label, "test": "Friedman (accuracy, all models)", "statistic": chi, "p": p, "n": len(piv)})
     runs = load_runs(setting, "distilbert")
     n_train = np.mean([r["info"]["n_train"] + r["info"]["n_val"] for r in runs]) if runs else 1
     n_test = np.mean([r["info"]["n_test"] for r in runs]) if runs else 1
@@ -173,7 +176,7 @@ def stats_tests(df, setting):
         diff = piv["distilbert"] - piv[m]
         w = stats.wilcoxon(piv["distilbert"], piv[m]) if (diff != 0).any() else None
         t, pt = corrected_t(diff, n_train, n_test)
-        pw.append({"setting": setting, "test": f"DistilBERT vs {NAMES[m]}", "mean_diff_acc": diff.mean(),
+        pw.append({"setting": label, "test": f"DistilBERT vs {NAMES[m]}", "mean_diff_acc": diff.mean(),
                    "wilcoxon_p": w.pvalue if w else 1.0, "corrected_t": t, "corrected_t_p": pt, "n": len(diff)})
     if pw:
         for row, adj in zip(pw, holm(np.array([r["wilcoxon_p"] for r in pw]))):
@@ -365,9 +368,10 @@ def main():
             continue
         df.to_csv(os.path.join(OUT, f"folds_{setting}.csv"), index=False)
         summary += summary_rows(df, label)
-        t, pw = stats_tests(df, setting)
-        tests += t
-        pairwise += pw
+        if setting == "real":
+            t, pw = stats_tests(df, setting)
+            tests += t
+            pairwise += pw
         for m in MODELS:
             sub = df[df.model == m]
             if len(sub):
@@ -378,6 +382,9 @@ def main():
     syn = fold_table("hybrid", subset="syn-")
     if not syn.empty:
         summary += summary_rows(syn, "hybrid, synthetic test samples")
+        t, pw = stats_tests(syn, "hybrid", "hybrid, synthetic test samples")
+        tests += t
+        pairwise += pw
     pd.DataFrame(summary).to_csv(os.path.join(OUT, "summary.csv"), index=False)
     pd.DataFrame(tests).to_csv(os.path.join(OUT, "tests_friedman.csv"), index=False)
     pd.DataFrame(pairwise).to_csv(os.path.join(OUT, "tests_pairwise.csv"), index=False)

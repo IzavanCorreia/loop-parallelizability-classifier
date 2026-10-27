@@ -1,0 +1,84 @@
+% Graphical abstract, drawn at its reading size (13 x 5 cm, the size required by Applied Soft Computing).
+% Compiled by fig_graphical_abstract.py, which writes the numbers in ga_values.tex from results/tables.
+\documentclass[border=0pt]{standalone}
+\input{figstyle}
+\input{ga_values}
+
+\newcommand{\fs}[1]{\fontsize{#1}{#1}\selectfont}
+\tikzset{
+  panel/.style={draw=boxedge, fill=boxfill, rounded corners=4pt, line width=0.7pt},
+  title/.style={anchor=base, font=\fs{8.5}\bfseries, text=ink},
+  sub/.style={anchor=base, font=\fs{7.5}, text=ink2},
+  txt/.style={anchor=base west, font=\fs{7.5}, text=ink},
+  name/.style={txt, font=\fs{7.5}\bfseries, text=accent},
+  code/.style={anchor=base west, font=\fs{7}\ttfamily, text=ink},
+  num/.style={anchor=base, font=\fs{8}, text=ink},
+  head/.style={anchor=base, font=\fs{7.5}, text=ink2},
+}
+% a four-line program whose third line, the only one that differs, is highlighted:
+% \program{x}{label}{third line}
+\newcommand{\program}[3]{
+  \node[txt, font=\fs{7}\bfseries] at (#1, 3.45) {#2};
+  \fill[ngram!18] (#1 - 0.06, 2.21) rectangle (#1 + 2.16, 2.5);
+  \node[code] at (#1, 3.0) {t = 0};
+  \node[code] at (#1, 2.65) {for x in xs:};
+  \node[code] at (#1, 2.3) {\ \ #3};
+  \node[code] at (#1, 1.95) {\ \ ys.append(t)};
+}
+% a bar of the synthetic-pairs panel: \accbar{row y}{label}{value}{color}{value text}
+\newcommand{\accbar}[5]{
+  \node[txt] at (5.3, #1) {#2};
+  \fill[#4] (5.3, #1 - 0.47) rectangle ++(2.2 * #3 / 100, 0.3);
+  \node[anchor=base west, font=\fs{7.5}, text=ink] at (5.3 + 2.2 * #3 / 100 + 0.06, #1 - 0.4) {#5};
+}
+% a row of the real-world panel: \row{y}{model node style}{model}{value 1}{value 2}{number font}
+\newcommand{\row}[6]{
+  \node[#2] at (8.9, #1) {#3};
+  \node[num, font=#6] at (11.15, #1) {#4\%};
+  \node[num, font=#6] at (12.35, #1) {#5\%};
+}
+
+\begin{document}
+\begin{tikzpicture}
+  \useasboundingbox (0, 0) rectangle (13, 5);
+
+  % 1. minimal pairs (x 0 to 4.85)
+  \draw[panel] (0.02, 0.02) rectangle (4.85, 4.98);
+  \node[title] at (2.43, 4.5) {Minimal loop pairs};
+  \node[sub] at (2.43, 4.1) {genetic algorithm + oracle};
+  \program{0.2}{Parallelizable}{t = f(x)}
+  \program{2.5}{Undefined}{t += f(x)}
+  \node[sub] at (2.43, 1.05) {4,000 pairs in 9 families};
+  \node[sub] at (2.43, 0.65) {only one statement differs};
+
+  \draw[flow, line width=1pt] (4.9, 2.5) -- (5.08, 2.5);
+
+  % 2. accuracy on the synthetic pairs (x 5.13 to 8.43)
+  \draw[panel] (5.13, 0.02) rectangle (8.43, 4.98);
+  \node[title] at (6.78, 4.5) {Synthetic pairs};
+  \node[sub] at (6.78, 4.1) {test accuracy (\%)};
+  \accbar{3.45}{LR, SVM, DNN, CNN}{\synPrevMax}{bar}{\synPrevMin--\synPrevMax}
+  \accbar{2.4}{N-gram LR}{\synNgram}{ngram}{\synNgram}
+  \accbar{1.35}{DistilBERT}{\synBert}{accent}{\textbf{\synBert}}
+  \node[sub, font=\fs{7.5}\itshape] at (6.78, 0.45) {chance level: 50\%};
+
+  \draw[flow, line width=1pt] (8.48, 2.5) -- (8.66, 2.5);
+
+  % 3. real-world loops (x 8.71 to 12.98)
+  \draw[panel, draw=accent, fill=accentfill] (8.71, 0.02) rectangle (12.98, 4.98);
+  \node[title] at (10.85, 4.5) {340 real-world loops};
+  \node[sub] at (10.85, 4.1) {trained on real loops};
+  \node[head] at (11.15, 3.55) {Accuracy};
+  \node[head] at (12.35, 3.55) {FPR};
+  \row{3.15}{name}{DistilBERT}{\realBertAcc}{\realBertFpr}{\fs{8}\bfseries}
+  \row{2.8}{txt}{N-gram LR}{\realNgAcc}{\realNgFpr}{\fs{8}}
+  \draw[boxedge, line width=0.4pt] (8.9, 2.55) -- (12.8, 2.55);
+  \node[sub] at (10.85, 2.2) {threshold for 5\% FPR};
+  \node[head] at (11.15, 1.85) {Recall};
+  \node[head] at (12.35, 1.85) {FPR};
+  \row{1.45}{name}{DistilBERT}{\thrBertTpr}{\thrBertFpr}{\fs{8}\bfseries}
+  \row{1.1}{txt}{N-gram LR}{\thrNgTpr}{\thrNgFpr}{\fs{8}}
+  \node[sub, font=\fs{7}\itshape] at (10.85, 0.62) {FPR: Undefined loops reported};
+  \node[sub, font=\fs{7}\itshape] at (10.85, 0.32) {as parallelizable};
+\end{tikzpicture}
+\end{document}

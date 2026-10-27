@@ -56,30 +56,6 @@ def color(model):
     return ACCENT if model == "distilbert" else NGRAM if model == "ngram" else GREY
 
 
-def fig_hybrid_folds():
-    df = pd.read_csv(os.path.join(common.RESULTS, "tables", "folds_hybrid.csv"))
-    fig, axes = plt.subplots(1, 2, figsize=(WIDTH, 2.6))
-    rng = np.random.default_rng(0)
-    for ax, key, label in ((axes[0], "accuracy", "Test accuracy (%)"), (axes[1], "fpr", "False positive rate (%)")):
-        for x, m in enumerate(MODELS):
-            v = 100 * df[df.model == m][key].to_numpy()
-            if len(v) == 0:
-                continue
-            ax.boxplot(v, positions=[x], widths=0.45, showfliers=False, patch_artist=True,
-                       boxprops=dict(facecolor="none", edgecolor=color(m), linewidth=1.1),
-                       medianprops=dict(color=color(m), linewidth=1.6),
-                       whiskerprops=dict(color=color(m), linewidth=1.0), capprops=dict(color=color(m), linewidth=1.0))
-            ax.scatter(x + rng.uniform(-0.15, 0.15, len(v)), v, s=9, color=color(m), alpha=0.55,
-                       linewidths=0, zorder=3)
-        ax.set_xticks(range(len(MODELS)), [SHORT[m] for m in MODELS], rotation=30, ha="right",
-                      rotation_mode="anchor")
-        ax.set_ylabel(label)
-        ax.grid(axis="x", visible=False)
-    fig.tight_layout(w_pad=2.5)
-    fig.savefig(os.path.join(FIG, "fig_hybrid_folds.pdf"))
-    plt.close(fig)
-
-
 def _pooled(setting, model):
     ys, ss = [], []
     for r in load_runs(setting, model):
@@ -123,11 +99,11 @@ def fig_real_categories():
     settings = list(dict.fromkeys(df.setting))
     cats = (df.groupby(["category", "label", "n"]).size().reset_index()
             .sort_values(["label", "n"], ascending=[True, True]))
-    fig, ax = plt.subplots(figsize=(WIDTH, 0.28 * len(cats) + 0.9))
+    fig, ax = plt.subplots(figsize=(WIDTH, 0.22 * len(cats) + 0.8))
     markers = ["o", "s", "D"]
     for k, s in enumerate(settings):
         sub = df[df.setting == s].set_index("category")
-        ys = np.arange(len(cats)) + (k - 1) * 0.22
+        ys = np.arange(len(cats)) + (k - 1) * 0.2
         xs = [100 * sub.loc[c, "correct"] if c in sub.index else np.nan for c in cats.category]
         ax.scatter(xs, ys, s=22, marker=markers[k], color=SERIES3[k], label=SETTING_LABELS.get(s, s), zorder=3,
                    edgecolors="white", linewidths=0.6)
@@ -139,14 +115,13 @@ def fig_real_categories():
     ax.grid(axis="y", visible=False)
     handles, labels = ax.get_legend_handles_labels()
     fig.legend(handles, labels, loc="lower center", ncol=3, frameon=False)
-    fig.tight_layout(rect=(0, 0.07, 1, 1))
+    fig.tight_layout(rect=(0, 0.08, 1, 1))
     fig.savefig(os.path.join(FIG, "fig_real_categories.pdf"))
     plt.close(fig)
 
 
 def main():
     os.makedirs(FIG, exist_ok=True)
-    fig_hybrid_folds()
     fig_roc_real()
     fig_real_categories()
     print("figures written to", FIG)
