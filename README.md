@@ -6,11 +6,13 @@ This repository contains the data, code and raw results of the manuscript
 generation and evaluation on real-world code**
 Izavan dos S. Correia, Henrique C. T. Santos, Tiago A. E. Ferreira (manuscript under review).
 
-Version 2.0.2 corresponds to this manuscript. It has the same data, models and raw results as v2.0.0 and
-v2.0.1 and adds the analyses of the extended text, computed from these results: the evolution of the genetic
-algorithm, the real-world loops that DistilBERT misclassifies in every repetition, and the distribution of the
-DistilBERT scores on the real-world loops (`code/experiments/extra_analyses.py`). Version 2.0.1 updated the
-statistical tests, the tables, and Figure 1 and the graphical abstract, drawn in TikZ. The releases v1.x contain
+Version 2.0.3 corresponds to this manuscript. It has the same data, models and raw results as v2.0.0 to
+v2.0.2 and adds two analyses of the revised text, computed from these results: the statistical tests on the
+fold-level false positive rate of the real-only scenario, and the accuracy of DistilBERT and of the n-gram model
+on the synthetic test samples by family of minimal pairs (`code/experiments/extra_analyses.py`). Version 2.0.2
+added the evolution of the genetic algorithm, the real-world loops that DistilBERT misclassifies in every
+repetition and the distribution of the DistilBERT scores; version 2.0.1 updated the statistical tests, the
+tables, and Figure 1 and the graphical abstract, drawn in TikZ. The releases v1.x contain
 the data and code of an earlier version of this work, posted on arXiv (https://arxiv.org/abs/2603.30040).
 
 ## Overview
@@ -55,7 +57,8 @@ code/
   experiments/ run.py (one model, one scenario), common.py (data and partitions), classic.py (models of
                the previous study and n-gram reference), bert.py (DistilBERT), summarize.py (tables and
                statistics), make_tables.py, figures.py (data plots), extra_analyses.py (genetic algorithm,
-               persistent errors and score distributions, with their figures), fig_pipeline.py and
+               persistent errors, score distributions, tests on the false positive rate and accuracy
+               by family, with their figures), fig_pipeline.py and
                fig_graphical_abstract.py (TikZ diagrams: fig_pipeline.tex, graphical_abstract.tex,
                figstyle.tex, compiled by tikz.py), launch_cpu.sh, launch_gpu.sh
   audit/       oracle_on_real.py (oracle on the real-world loops, Cohen's kappa),
@@ -131,7 +134,8 @@ All commands run from the repository root.
    ```
 
    - `summarize.py` writes `results/tables`; `extra_analyses.py` adds `ga_evolution.csv`, `ga_summary.csv`,
-     `real_errors.csv`, `error_summary.csv` and `score_summary.csv` there.
+     `real_errors.csv`, `error_summary.csv`, `score_summary.csv`, `tests_fpr.csv` and `family_accuracy.csv`
+     there.
    - `make_tables.py` and the figure scripts write LaTeX table bodies and PDF figures to `latex/`.
 
 ## License
@@ -147,7 +151,7 @@ Data and code (Zenodo):
   author    = {Izavan dos S. Correia and Henrique C. T. Santos and Tiago A. E. Ferreira},
   title     = {IzavanCorreia/loop-parallelizability-classifier: Data and code},
   year      = {2026},
-  version   = {v2.0.2},
+  version   = {v2.0.3},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.21013787},
   url       = {https://doi.org/10.5281/zenodo.21013787}
