@@ -14,6 +14,7 @@
   code/.style={anchor=base west, font=\fs{7}\ttfamily, text=ink},
   num/.style={anchor=base, font=\fs{8}, text=ink},
   head/.style={anchor=base, font=\fs{7.5}, text=ink2},
+  group/.style={anchor=base west, font=\fs{7}\itshape, text=ink2},
 }
 % a four-line program whose third line, the only one that differs, is highlighted:
 % \program{x}{label}{third line}
@@ -34,8 +35,8 @@
 % a row of the real-world panel: \row{y}{model node style}{model}{value 1}{value 2}{number font}
 \newcommand{\row}[6]{
   \node[#2] at (8.9, #1) {#3};
-  \node[num, font=#6] at (11.15, #1) {#4\%};
-  \node[num, font=#6] at (12.35, #1) {#5\%};
+  \node[num, font=#6] at (11.3, #1) {#4\%};
+  \node[num, font=#6] at (12.4, #1) {#5\%};
 }
 
 \begin{document}
@@ -67,18 +68,19 @@
   % 3. real-world loops (x 8.71 to 12.98)
   \draw[panel, draw=accent, fill=accentfill] (8.71, 0.02) rectangle (12.98, 4.98);
   \node[title] at (10.85, 4.5) {340 real-world loops};
-  \node[sub] at (10.85, 4.1) {trained on real loops};
-  \node[head] at (11.15, 3.55) {Accuracy};
-  \node[head] at (12.35, 3.55) {FPR};
-  \row{3.15}{name}{DistilBERT}{\realBertAcc}{\realBertFpr}{\fs{8}\bfseries}
-  \row{2.8}{txt}{N-gram LR}{\realNgAcc}{\realNgFpr}{\fs{8}}
-  \draw[boxedge, line width=0.4pt] (8.9, 2.55) -- (12.8, 2.55);
-  \node[sub] at (10.85, 2.2) {threshold for 5\% FPR};
-  \node[head] at (11.15, 1.85) {Recall};
-  \node[head] at (12.35, 1.85) {FPR};
-  \row{1.45}{name}{DistilBERT}{\thrBertTpr}{\thrBertFpr}{\fs{8}\bfseries}
-  \row{1.1}{txt}{N-gram LR}{\thrNgTpr}{\thrNgFpr}{\fs{8}}
-  \node[sub, font=\fs{7}\itshape] at (10.85, 0.62) {FPR: Undefined loops reported};
-  \node[sub, font=\fs{7}\itshape] at (10.85, 0.32) {as parallelizable};
+  \node[head] at (11.3, 4.0) {Accuracy};
+  \node[head] at (12.4, 4.0) {FPR};
+  \node[group] at (8.9, 3.65) {trained on synthetic pairs};
+  \row{3.32}{txt}{DistilBERT}{\synRealAcc}{\synRealFpr}{\fs{8}}
+  \node[group] at (8.9, 2.97) {trained on real loops};
+  \row{2.64}{name}{DistilBERT}{\realBertAcc}{\realBertFpr}{\fs{8}\bfseries}
+  \row{2.31}{txt}{N-gram LR}{\realNgAcc}{\realNgFpr}{\fs{8}}
+  \draw[boxedge, line width=0.4pt] (8.9, 2.08) -- (12.8, 2.08);
+  \node[head, anchor=base west, font=\fs{7}] at (8.9, 1.75) {5\% FPR target};
+  \node[head] at (11.3, 1.75) {Recall};
+  \node[head] at (12.4, 1.75) {FPR};
+  \row{1.42}{name}{DistilBERT}{\thrBertTpr}{\thrBertFpr}{\fs{8}\bfseries}
+  \row{1.09}{txt}{N-gram LR}{\thrNgTpr}{\thrNgFpr}{\fs{8}}
+  \node[sub, font=\fs{7}\itshape] at (10.85, 0.45) {FPR: false positive rate};
 \end{tikzpicture}
 \end{document}

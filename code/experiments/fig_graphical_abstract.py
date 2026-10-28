@@ -17,13 +17,15 @@ def values():
     tables = os.path.join(common.RESULTS, "tables")
     syn = pd.read_csv(os.path.join(tables, "summary.csv"))
     syn = 100 * syn[syn.setting == "hybrid, synthetic test samples"].set_index("model").accuracy_mean
-    real = pd.read_csv(os.path.join(tables, "real_code.csv"))
-    real = real[real.setting == "(c) real only"].set_index("model")
+    real_all = pd.read_csv(os.path.join(tables, "real_code.csv"))
+    real = real_all[real_all.setting == "(c) real only"].set_index("model")
+    syn_real = real_all[real_all.setting == "(a) synthetic only -> real"].set_index("model").loc["DistilBERT"]
     fc = pd.read_csv(os.path.join(tables, "fpr_control.csv"))
     thr = fc[(fc.setting == "real") & (fc.alpha == 0.05)].groupby("model").first()
     prev = syn[["Logistic regression", "Linear SVM", "DNN", "CNN"]]
     v = {"synPrevMin": prev.min(), "synPrevMax": prev.max(), "synNgram": syn["N-gram LR"],
          "synBert": syn["DistilBERT"],
+         "synRealAcc": 100 * syn_real.accuracy_mean, "synRealFpr": 100 * syn_real.fpr_mean,
          "realBertAcc": 100 * real.loc["DistilBERT", "accuracy_mean"], "realBertFpr": 100 * real.loc["DistilBERT", "fpr_mean"],
          "realNgAcc": 100 * real.loc["N-gram LR", "accuracy_mean"], "realNgFpr": 100 * real.loc["N-gram LR", "fpr_mean"],
          "thrBertTpr": 100 * thr.loc["distilbert", "tpr_mean"], "thrBertFpr": 100 * thr.loc["distilbert", "fpr_mean"],

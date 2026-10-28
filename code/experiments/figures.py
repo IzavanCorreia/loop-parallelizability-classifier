@@ -66,7 +66,7 @@ def _pooled(setting, model):
 
 
 def fig_roc_real():
-    fig, axes = plt.subplots(1, 3, figsize=(WIDTH, 2.9), sharey=True)
+    fig, axes = plt.subplots(1, 3, figsize=(WIDTH, 2.45), sharey=True)
     titles = {"syn2real": "(a) Synthetic only", "hybrid": "(b) Hybrid", "real": "(c) Real only"}
     for ax, setting in zip(axes, ("syn2real", "hybrid", "real")):
         ax.plot([0, 1], [0, 1], color=GRID, linewidth=1.0, zorder=1)
@@ -99,7 +99,7 @@ def fig_real_categories():
     settings = list(dict.fromkeys(df.setting))
     cats = (df.groupby(["category", "label", "n"]).size().reset_index()
             .sort_values(["label", "n"], ascending=[True, True]))
-    fig, ax = plt.subplots(figsize=(WIDTH, 0.22 * len(cats) + 0.8))
+    fig, ax = plt.subplots(figsize=(WIDTH, 0.18 * len(cats) + 0.7))
     markers = ["o", "s", "D"]
     for k, s in enumerate(settings):
         sub = df[df.setting == s].set_index("category")

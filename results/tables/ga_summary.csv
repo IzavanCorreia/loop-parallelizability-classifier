@@ -1,0 +1,2 @@
+generations,population,valid_first,valid_last,fit_mean_first,fit_mean_last,fit_max_first,fit_max_last,signatures_min,signatures_max,signatures_first,signatures_last,valid_seen_last,minutes
+50,10000,0.9923,0.9989,2.8522457303563606,2.9055815987687423,2.9927007299270074,2.992366412213741,7907,8532,8068,8442,452906,1.5366666666666666

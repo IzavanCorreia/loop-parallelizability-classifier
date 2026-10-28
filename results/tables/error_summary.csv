@@ -1,0 +1,10 @@
+label,category,loops
+all,always wrong,13
+Undefined,always wrong (false positives),2
+Parallelizable,always wrong (false negatives),11
+all,right in some repetitions only,33
+Parallelizable,"always wrong, neighbor read or nested loop",6
+Parallelizable,"explicit loop, map with append",10
+Parallelizable,"explicit loop, writes to own position",1
+Undefined,output list read inside the loop,1
+Undefined,scalar carried between iterations (accumulator/recurrence),1
