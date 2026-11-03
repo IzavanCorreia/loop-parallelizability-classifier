@@ -62,11 +62,16 @@ def _predict(model, loader, device):
     return np.concatenate(probs), losses / n
 
 
-def run(codes_tr, y_tr, codes_va, y_va, codes_te, seed):
+def run(codes_tr, y_tr, codes_va, y_va, codes_te, seed, init_state=None, codes_extra=None, return_state=False):
+    """init_state: weights to start from instead of the pre-trained DistilBERT (two-stage training);
+    codes_extra: samples scored once with the selected weights; return_state: adds these weights to extra."""
     device = "cuda" if torch.cuda.is_available() else "cpu"
     torch.manual_seed(seed)
     t0 = time.time()
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME, num_labels=2).to(device)
+    model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME, num_labels=2)
+    if init_state is not None:
+        model.load_state_dict(init_state)
+    model = model.to(device)
     dl_tr = _loader(codes_tr, y_tr, True, seed)
     dl_va = _loader(codes_va, y_va, False)
     dl_te = _loader(codes_te, np.zeros(len(codes_te), dtype=int), False)
@@ -116,6 +121,10 @@ def run(codes_tr, y_tr, codes_va, y_va, codes_te, seed):
             "peak_vram_gb": torch.cuda.max_memory_allocated() / 2 ** 30 if device == "cuda" else 0.0}
     extra = {"epoch_val_scores": np.stack(ep_val_scores), "epoch_test_scores": np.stack(ep_test_scores),
              "epoch_val_loss": np.array(ep_val_loss)}
+    if codes_extra is not None:
+        extra["extra_score"], _ = _predict(model, _loader(codes_extra, np.zeros(len(codes_extra), dtype=int), False), device)
+    if return_state:
+        extra["state"] = best_state
     del model
     if device == "cuda":
         torch.cuda.empty_cache()

@@ -1,4 +1,5 @@
 __pycache__/
 *.pyc
 results/logs/
+results/two_stage_ckpt/
 latex/

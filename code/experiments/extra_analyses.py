@@ -49,16 +49,22 @@ def fig_ga(log):
     g = log.gen
     axes[0].plot(g, 100 * log.valid_frac, color=figures.ACCENT)
     axes[0].set_title("(a) Valid individuals (%)", loc="left")
-    axes[1].plot(g, log.fit_max, color=figures.INK2, linestyle="--", label="maximum")
-    axes[1].plot(g, log.fit_mean, color=figures.ACCENT, label="mean")
+    axes[0].set_ylim(99, 100)
+    axes[1].plot(g, log.fit_max, color=figures.INK2, linestyle="--")
+    axes[1].plot(g, log.fit_mean, color=figures.ACCENT)
     axes[1].set_title("(b) Fitness", loc="left")
     axes[1].set_ylim(2.75, 3.05)
-    axes[1].legend(frameon=False, loc="center right", bbox_to_anchor=(1, 0.64))
+    # each curve named next to its right end instead of a legend between the curves
+    axes[1].text(g.iloc[-1], log.fit_max.iloc[-1] + 0.012, "maximum", ha="right", va="bottom", fontsize=8,
+                 color=figures.INK2)
+    axes[1].text(g.iloc[-1], log.fit_mean.iloc[-15:].min() - 0.008, "mean", ha="right", va="top", fontsize=8,
+                 color=figures.ACCENT)
     axes[2].plot(g, log.distinct_signatures / 1000, color=figures.ACCENT)
     axes[2].set_title("(c) Signatures (thousands)", loc="left")
     axes[2].set_ylim(0, 10)
     for ax in axes:
         ax.set_xlabel("Generation")
+        ax.set_xticks(range(0, int(g.iloc[-1]) + 1, 10))
     fig.tight_layout()
     fig.savefig(os.path.join(FIG, "fig_ga_evolution.pdf"))
     plt.close(fig)
@@ -173,7 +179,7 @@ def fpr_tests():
 
 
 def fig_scores(data):
-    fig, axes = plt.subplots(1, 3, figsize=(figures.WIDTH, 2.3), sharey=True)
+    fig, axes = plt.subplots(1, 3, figsize=(figures.WIDTH, 2.1), sharey=True)
     bins = np.linspace(0, 1, 21)
     for ax, (setting, title) in zip(axes, SETTINGS):
         y, s = data[setting]
@@ -183,7 +189,7 @@ def fig_scores(data):
         ax.axvline(0.5, color=figures.INK2, linewidth=0.6, linestyle=(0, (2, 2)))
         ax.set_title(title, loc="left")
         ax.set_xlabel("DistilBERT score")
-    axes[0].set_ylabel("Predictions")
+    axes[0].set_ylabel("Predictions (3 repetitions)")
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="lower center", ncol=2, frameon=False)
     fig.tight_layout(rect=(0, 0.1, 1, 1))

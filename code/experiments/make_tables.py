@@ -8,6 +8,7 @@ the manuscripts. Values are percentages with one decimal, AUC with three decimal
   tab_real.tex         the 340 real-world loops in the three scenarios
   tab_fpr_control.tex  real-only scenario: default threshold and thresholds for a target FPR
   tab_cost.tex         parameters, training and inference time
+  tab_two_stage.tex    real-only and two-stage training by number of real-world training loops
 """
 
 import json
@@ -129,6 +130,23 @@ def table_cost(eff):
     write("tab_cost.tex", out)
 
 
+def table_two_stage(ts):
+    """Real-only and two-stage training by number of real-world training loops."""
+    out = {}
+    for lang in ("en", "pt"):
+        lines = []
+        for pct in sorted(ts.budget.unique()):
+            a = ts[(ts.budget == pct) & (ts.arm == "scratch")].iloc[0]
+            b = ts[(ts.budget == pct) & (ts.arm == "pretrained")].iloc[0]
+            cells = []
+            for col, digits, as_pct in (("accuracy_mean", 1, True), ("fpr_mean", 1, True), ("auc_mean", 3, False),
+                                        ("tpr_at_0.05", 1, True), ("pairs_accuracy_mean", 1, True)):
+                cells += [fmt(a[col], lang, digits, as_pct), fmt(b[col], lang, digits, as_pct)]
+            lines.append(f"{a.n_train_mean:.0f} & " + " & ".join(cells) + " \\\\")
+        out[lang] = "\n".join(lines) + "\n"
+    write("tab_two_stage.tex", out)
+
+
 def main():
     summary = pd.read_csv(os.path.join(T, "summary.csv"))
     real = pd.read_csv(os.path.join(T, "real_code.csv"))
@@ -140,6 +158,7 @@ def main():
     table_real(real)
     table_fpr_control(fc)
     table_cost(eff)
+    table_two_stage(pd.read_csv(os.path.join(T, "two_stage.csv")))
     print("tables written to", OUT["en"], "and", OUT["pt"])
 
 

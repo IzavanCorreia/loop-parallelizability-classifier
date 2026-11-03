@@ -1,0 +1,3 @@
+comparison,runs,same_partitions,predictions_changed,predictions,accuracy_new,accuracy_original
+scratch_f100 x real/distilbert,30,True,4,1020,0.9137254901960784,0.9156862745098039
+stage1 x syn2real/distilbert,3,True,387,1020,0.5656862745098039,0.5686274509803921

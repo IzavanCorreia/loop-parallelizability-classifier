@@ -12,11 +12,11 @@
 \begin{document}
 \begin{tikzpicture}
   % columns start at 0, 4.07, 8.14 and 12.46 cm; rows at 0 and -2.66 cm
-  \node[box] (ga) at (0, 0) {\content{Genetic algorithm}{DEAP, 10,000 genomes\\50 generations\\
-    genome \arr{} loop pair\\9 loop families}};
+  \node[box] (ga) at (0, 0) {\content{Genetic algorithm}{10,000 genomes\\50 generations\\
+    fitness sharing\\genome \arr{} minimal pair}};
   \node[box] (oracle) at (4.07, 0) {\content{Dependence oracle}{runs each loop\\iteration by iteration\\
     confirms the label}};
-  \node[box] (syn) at (8.14, 0) {\content{Synthetic set}{4,000 minimal pairs\\(8,000 loops)\\
+  \node[box] (syn) at (8.14, 0) {\content{Synthetic set}{4,000 minimal pairs\\9 families, 8,000 loops\\
     same names and data\\in both loops}};
   \node[accentbox] (models) at (12.46, 0) {\content{Models}{\textcolor{accent}{\bfseries DistilBERT}\\LR, SVM, DNN, CNN\\(previous study)\\
     n-gram LR}};
@@ -25,9 +25,9 @@
     researchers' labels}};
   \node[box] (check) at (4.07, -2.66) {\content{Oracle check}{agreement 97.6\%\\Cohen's kappa 0.953\\
     8 labels adjudicated}};
-  \node[box] (realset) at (8.14, -2.66) {\content{Real-world set}{176 Parallelizable\\164 Undefined}};
-  \node[box] (eval) at (12.46, -2.66) {\content{Evaluation}{hybrid\\synthetic \arr{} real\\real only\\
-    FPR, AUC, thresholds}};
+  \node[box] (realset) at (8.14, -2.66) {\content{Real-world set}{176 Parallelizable\\164 Undefined\\10 dependence types}};
+  \node[box] (eval) at (12.46, -2.66) {\content{Evaluation}{synthetic \arr{} real, hybrid\\real only, two-stage\\FPR, AUC\\
+    target-FPR thresholds}};
 
   % data flow
   \draw[flow] (ga) -- (oracle);

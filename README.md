@@ -2,12 +2,15 @@
 
 This repository contains the data, code and raw results of the manuscript
 
-**Automatic loop parallelizability classification via contextual code representations: evolutionary data
-generation and evaluation on real-world code**
+**Automatic loop parallelizability classification via contextual code representations: evolutionary generation
+of minimal pairs and evaluation on real-world code**
 Izavan dos S. Correia, Henrique C. T. Santos, Tiago A. E. Ferreira (manuscript under review).
 
-Version 2.0.3 corresponds to this manuscript. It has the same data, models and raw results as v2.0.0 to
-v2.0.2 and adds two analyses of the revised text, computed from these results: the statistical tests on the
+Version 2.0.4 corresponds to this manuscript. It has the same data, models and raw results as v2.0.0 to
+v2.0.3 and adds a two-stage experiment: DistilBERT fine-tuned on the synthetic pairs first and on the real-world
+loops afterwards, against real-only training, at four sizes of the real-world training set, with an evaluation on
+held-out pairs (`code/experiments/two_stage.py`, protocol in `code/experiments/TWO_STAGE_PROTOCOL.md`). Version
+2.0.3 added two analyses of the revised text, computed from these results: the statistical tests on the
 fold-level false positive rate of the real-only scenario, and the accuracy of DistilBERT and of the n-gram model
 on the synthetic test samples by family of minimal pairs (`code/experiments/extra_analyses.py`). Version 2.0.2
 added the evolution of the genetic algorithm, the real-world loops that DistilBERT misclassifies in every
@@ -39,7 +42,9 @@ the data and code of an earlier version of this work, posted on arXiv (https://a
 - **Scenarios.**
   - hybrid (synthetic and real-world loops, 3 × stratified group 10-fold cross-validation);
   - synthetic to real (training on synthetic loops, testing on the 340 real-world loops);
-  - real only (3 × stratified group 10-fold cross-validation).
+  - real only (3 × stratified group 10-fold cross-validation);
+  - two-stage training of DistilBERT (the pairs first, then the real-world loops of each real-only fold), against
+    real-only training, with 10%, 25%, 50% and 100% of the real-world training loops.
 
 ## Repository structure
 
@@ -60,11 +65,13 @@ code/
                persistent errors, score distributions, tests on the false positive rate and accuracy
                by family, with their figures), fig_pipeline.py and
                fig_graphical_abstract.py (TikZ diagrams: fig_pipeline.tex, graphical_abstract.tex,
-               figstyle.tex, compiled by tikz.py), launch_cpu.sh, launch_gpu.sh
+               figstyle.tex, compiled by tikz.py), launch_cpu.sh, launch_gpu.sh,
+               two_stage.py, two_stage_summary.py, launch_two_stage.sh, TWO_STAGE_PROTOCOL.md (two-stage experiment)
   audit/       oracle_on_real.py (oracle on the real-world loops, Cohen's kappa),
                real_dependence_types.py (dependence types), synthetic_rules.py (one-line surface rules)
 results/
   raw/<scenario>/<model>/rep{r}_fold{k}.npz   validation and test scores of every run
+  raw/two_stage/<arm>_f<percent>/rep{r}_fold{k}.npz   the same for the two-stage experiment, plus held-out pair scores
   folds/       partitions of every scenario and repetition
   tables/      CSV files with all numbers reported in the manuscript
   real_dependence_types.csv, real_oracle_before_adjudication.csv, ga_run.log
@@ -81,7 +88,7 @@ Python 3.12 and the packages in `requirements.txt`:
 pip install -r requirements.txt
 ```
 
-DistilBERT was trained on an NVIDIA GeForce RTX 3050 laptop GPU with 6 GB of memory (about 8 minutes per fold of
+DistilBERT was trained on an NVIDIA GeForce RTX 3050 GPU with 6 GB of memory (about 8 minutes per fold of
 the hybrid scenario). The other models run on the CPU.
 
 The two diagrams (Figure 1 and the graphical abstract) need `pdflatex` with the `pgf`, `standalone` and `dejavu`
@@ -119,6 +126,7 @@ All commands run from the repository root.
    # models: lr, svm, dnn, cnn, ngram, distilbert; settings: hybrid, syn2real, real
    bash code/experiments/launch_cpu.sh    # all models except DistilBERT
    bash code/experiments/launch_gpu.sh    # DistilBERT
+   bash code/experiments/launch_two_stage.sh    # two-stage experiment, about 2 hours on the GPU
    ```
 
 5. **Tables, statistics and figures**
@@ -126,6 +134,7 @@ All commands run from the repository root.
    ```bash
    python code/audit/synthetic_rules.py
    python code/experiments/summarize.py
+   python code/experiments/two_stage_summary.py
    python code/experiments/make_tables.py
    python code/experiments/figures.py
    python code/experiments/extra_analyses.py
@@ -135,7 +144,8 @@ All commands run from the repository root.
 
    - `summarize.py` writes `results/tables`; `extra_analyses.py` adds `ga_evolution.csv`, `ga_summary.csv`,
      `real_errors.csv`, `error_summary.csv`, `score_summary.csv`, `tests_fpr.csv` and `family_accuracy.csv`
-     there.
+     there; `two_stage_summary.py` adds `two_stage.csv`, `two_stage_tests.csv`, `two_stage_stage1.csv` and
+     `two_stage_checks.csv`.
    - `make_tables.py` and the figure scripts write LaTeX table bodies and PDF figures to `latex/`.
 
 ## License
@@ -151,7 +161,7 @@ Data and code (Zenodo):
   author    = {Izavan dos S. Correia and Henrique C. T. Santos and Tiago A. E. Ferreira},
   title     = {IzavanCorreia/loop-parallelizability-classifier: Data and code},
   year      = {2026},
-  version   = {v2.0.3},
+  version   = {v2.0.4},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.21013787},
   url       = {https://doi.org/10.5281/zenodo.21013787}
