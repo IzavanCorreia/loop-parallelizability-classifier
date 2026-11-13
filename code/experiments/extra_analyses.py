@@ -7,8 +7,14 @@
 - score_summary.csv: DistilBERT scores on the real-world loops per scenario and class
 - tests_fpr.csv: Friedman, Wilcoxon and corrected resampled t-tests (Holm) on the fold-level FPR, real-only scenario
 - family_accuracy.csv: DistilBERT and n-gram accuracy on the synthetic test samples of the hybrid scenario, by family
+- neighbor_reads.csv: real-world loops that read a neighbor element (x[i-1], x[i+1], ...), by final label, and how
+  often DistilBERT (real-only) misclassifies the Parallelizable ones
+- near_duplicates.csv: real-world loops grouped by normalized syntax tree (identifiers, literals and list lengths
+  abstracted), and the real-only accuracy and FPR of DistilBERT and the n-gram model on loops with and without a
+  near duplicate (existing predictions, no retraining)
 Figures: latex/figures/fig_ga_evolution.pdf and fig_scores_real.pdf (same style as figures.py)."""
 
+import ast
 import os
 import re
 import sys
@@ -25,7 +31,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 
 OUT = os.path.join(common.RESULTS, "tables")
 FIG = figures.FIG
-SETTINGS = [("syn2real", "(a) Synthetic only"), ("hybrid", "(b) Hybrid"), ("real", "(c) Real only")]
+SETTINGS = [("syn2real", "(a) Synthetic only"), ("hybrid", "(b) Hybrid"), ("real", "(c) Human only")]
 
 
 def ga_tables():
@@ -178,6 +184,75 @@ def fpr_tests():
     return out
 
 
+def neighbor_reads():
+    """Loops whose code reads an element at a constant offset from an index, such as valores[i-1]."""
+    pattern = re.compile(r"\[\s*\w+\s*[-+]\s*\d+\s*\]")
+    meta = pd.read_csv(os.path.join(common.DATA, "real", "metadata.csv"))
+    adjudicated = {f"real-{c[0]}-{i}" for c, i, a in zip(meta["class"], meta["index"], meta.adjudicated) if a}
+    errors = pd.read_csv(os.path.join(OUT, "real_errors.csv")).set_index("id")
+    hits = [it for it in common.load_real() if pattern.search(it["code"])]
+    par = [it["id"] for it in hits if it["label"] == 1]
+    out = pd.DataFrame([{
+        "loops": len(hits), "undefined": sum(it["label"] == 0 for it in hits), "parallelizable": len(par),
+        "parallelizable_adjudicated": sum(i in adjudicated for i in par),
+        "parallelizable_always_wrong": int(sum(errors.loc[i, "correct_reps"] == 0 for i in par)),
+    }])
+    out.to_csv(os.path.join(OUT, "neighbor_reads.csv"), index=False)
+    return out
+
+
+class _Abstract(ast.NodeTransformer):
+    """Replaces identifiers, function names and literals, so that only the structure of the code remains."""
+
+    def visit_Name(self, node):
+        return ast.copy_location(ast.Name(id="V", ctx=node.ctx), node)
+
+    def visit_arg(self, node):
+        node.arg, node.annotation = "A", None
+        return node
+
+    def visit_Constant(self, node):
+        return ast.copy_location(ast.Constant(value=type(node.value).__name__), node)
+
+    def visit_FunctionDef(self, node):
+        node.name = "F"
+        self.generic_visit(node)
+        return node
+
+
+def near_duplicates():
+    """Groups the real-world loops by normalized syntax tree and compares the real-only accuracy on loops with and
+    without a near duplicate. The models were trained with the original groups, so this is a check, not a rerun."""
+    groups = {}
+    for it in common.load_real():
+        shape = ast.dump(_Abstract().visit(ast.parse(it["code"])), annotate_fields=False)
+        shape = re.sub(r"List\(\[(?:Constant\('\w+'\)(?:, )?)+\]", "List([C*]", shape)   # list literals of any length
+        groups.setdefault(shape, []).append(it)
+    multi = [g for g in groups.values() if len(g) > 1]
+    dup = {it["id"] for g in multi for it in g}
+    row = {"loops": sum(len(g) for g in groups.values()), "groups": len(groups), "groups_with_duplicates": len(multi),
+           "loops_with_duplicate": len(dup), "loops_without_duplicate": sum(len(g) for g in groups.values()) - len(dup),
+           "largest_group": max(len(g) for g in groups.values()),
+           "mixed_class_groups": sum(len({it["label"] for it in g}) > 1 for g in multi)}
+    for model in ("distilbert", "ngram"):
+        res = {k: {"ok": 0, "n": 0, "fp": 0, "neg": 0} for k in ("dup", "single")}
+        for r in summarize.load_runs("real", model):
+            for i, y, s in zip(r["test_ids"].astype(str), r["test_y"], r["test_score"]):
+                c = res["dup" if i in dup else "single"]
+                pred = int(s > r["info"]["threshold"])
+                c["ok"] += int(pred == y)
+                c["n"] += 1
+                if y == 0:
+                    c["fp"] += pred
+                    c["neg"] += 1
+        for k, c in res.items():
+            row[f"{model}_acc_{k}"] = c["ok"] / c["n"]
+            row[f"{model}_fpr_{k}"] = c["fp"] / c["neg"]
+    out = pd.DataFrame([row])
+    out.to_csv(os.path.join(OUT, "near_duplicates.csv"), index=False)
+    return out
+
+
 def fig_scores(data):
     fig, axes = plt.subplots(1, 3, figsize=(figures.WIDTH, 2.1), sharey=True)
     bins = np.linspace(0, 1, 21)
@@ -206,7 +281,11 @@ def main():
     fig_scores(data)
     tests = fpr_tests()
     families = family_accuracy()
+    neighbors = neighbor_reads()
+    duplicates = near_duplicates()
     print(ga.to_string())
+    print(neighbors.to_string())
+    print(duplicates.round(4).T.to_string())
     print(tests.to_string())
     print(families.pivot(index="family", columns="model", values="accuracy").round(3).to_string())
     print(pd.read_csv(os.path.join(OUT, "error_summary.csv")).to_string())

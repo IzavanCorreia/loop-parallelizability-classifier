@@ -1,0 +1,9 @@
+{
+  "out": "data/synthetic_random",
+  "batches": 51,
+  "batch_size": 10000,
+  "pairs": 4000,
+  "seed": 42,
+  "archive_cap": 3000,
+  "workers": 14
+}

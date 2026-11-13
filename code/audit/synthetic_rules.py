@@ -1,7 +1,9 @@
-"""Accuracy and FPR of one-line surface rules on the synthetic set -> results/tables/synthetic_rules.json.
+"""Accuracy and FPR of one-line surface rules on the synthetic set -> results/tables/synthetic_rules.json, and of
+rules of the same kind on the 340 real-world loops -> results/tables/real_rules.json.
 
 Each rule predicts Undefined (0) or Parallelizable (1) from a surface property of the sample."""
 
+import ast
 import json
 import os
 import re
@@ -48,6 +50,38 @@ def surface_rules(codes):
     }
 
 
+def comprehension_only(code):
+    """True when the sample has no loop statement and builds its result with a comprehension."""
+    tree = ast.parse(code)
+    if any(isinstance(n, (ast.For, ast.While)) for n in ast.walk(tree)):
+        return False
+    return any(isinstance(n, (ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)) for n in ast.walk(tree))
+
+
+def real_rules():
+    """Surface rules on the real-world loops; the keyword rules match whole words."""
+    P = load(os.path.join(ROOT, "data", "real", "Parallelizable_codes.py"))
+    U = load(os.path.join(ROOT, "data", "real", "Undefined_codes.py"))
+    codes = P + U
+    y = np.array([1] * len(P) + [0] * len(U))
+    med = np.median([len(c) for c in codes])
+    kw = lambda word: (lambda c: re.search(rf"\b{word}\b", c) is not None)
+    rules = {
+        "has '+=' -> Undefined": lambda c: "+=" in c,
+        "has 'while' -> Undefined": kw("while"),
+        "has 'break' -> Undefined": kw("break"),
+        "has '+=', 'while' or 'break' -> Undefined": lambda c: "+=" in c or kw("while")(c) or kw("break")(c),
+        "longer than median -> Undefined": lambda c: len(c) > med,
+        "not a comprehension -> Undefined": lambda c: not comprehension_only(c),
+    }
+    out = []
+    for key, is_undefined in rules.items():
+        acc, fpr = metrics(y, np.array([0 if is_undefined(c) else 1 for c in codes]))
+        out.append({"rule": key, "accuracy": float(acc), "fpr": float(fpr)})
+        print(f"real: {key:45s} acc={acc*100:.2f}% FPR={fpr*100:.2f}%")
+    json.dump(out, open(os.path.join(ROOT, "results", "tables", "real_rules.json"), "w", encoding="utf-8"), indent=2)
+
+
 def main():
     P = load(os.path.join(ROOT, "data", "synthetic", "Parallelizable_codes.py"))
     U = load(os.path.join(ROOT, "data", "synthetic", "Undefined_codes.py"))
@@ -62,6 +96,7 @@ def main():
     path = os.path.join(ROOT, "results", "tables", "synthetic_rules.json")
     os.makedirs(os.path.dirname(path), exist_ok=True)
     json.dump(out, open(path, "w", encoding="utf-8"), indent=2)
+    real_rules()
 
 
 if __name__ == "__main__":

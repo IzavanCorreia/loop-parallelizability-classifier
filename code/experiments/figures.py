@@ -31,7 +31,7 @@ SHORT = {"lr": "LR", "svm": "SVM", "dnn": "DNN", "cnn": "CNN", "ngram": "N-gram"
 NGRAM = "#eb6834"   # the additional lexical reference gets its own hue
 WIDTH = 6.3   # inches, text width of the single-column CAS template
 SETTING_LABELS = {"(a) synthetic only -> real": "(a) Synthetic only", "(b) hybrid, real test samples": "(b) Hybrid",
-                  "(c) real only": "(c) Real only"}
+                  "(c) real only": "(c) Human only"}
 CATEGORY_LABELS = {"scalar carried between iterations (accumulator/recurrence)": "Carried scalar (accumulator, recurrence)",
                    "output list read inside the loop": "Output list read in the loop",
                    "value used after the loop (live-out)": "Value used after the loop",
@@ -66,8 +66,8 @@ def _pooled(setting, model):
 
 
 def fig_roc_real():
-    fig, axes = plt.subplots(1, 3, figsize=(WIDTH, 2.25), sharey=True)
-    titles = {"syn2real": "(a) Synthetic only", "hybrid": "(b) Hybrid", "real": "(c) Real only"}
+    fig, axes = plt.subplots(1, 3, figsize=(WIDTH, 2.05), sharey=True)
+    titles = {"syn2real": "(a) Synthetic only", "hybrid": "(b) Hybrid", "real": "(c) Human only"}
     for ax, setting in zip(axes, ("syn2real", "hybrid", "real")):
         ax.plot([0, 1], [0, 1], color=GRID, linewidth=1.0, zorder=1)
         ax.axvline(0.05, color=INK2, linewidth=0.6, linestyle=(0, (2, 2)), zorder=1)

@@ -72,9 +72,9 @@ def table_synthetic(summary, audit_rules):
 
 
 def table_real(real):
-    labels = {"(a) synthetic only -> real": ("Synthetic $\\rightarrow$ real", "Sintético $\\rightarrow$ real"),
-              "(b) hybrid, real test samples": ("Hybrid (real test loops)", "Híbrido (laços reais de teste)"),
-              "(c) real only": ("Real only", "Somente real")}
+    labels = {"(a) synthetic only -> real": ("Synthetic $\\rightarrow$ human", "Sintético $\\rightarrow$ humano"),
+              "(b) hybrid, real test samples": ("Hybrid (human-written test loops)", "Híbrido (laços de teste escritos por humanos)"),
+              "(c) real only": ("Human only", "Somente humano")}
     out = {}
     for lang in ("en", "pt"):
         lines = []
@@ -89,8 +89,8 @@ def table_real(real):
                     continue
                 r = r.iloc[0]
                 lines.append(f"\\quad {name(m, lang)} & {pm(r.accuracy_mean, r.accuracy_sd, lang)} & "
-                             f"{fmt(r.recall_mean, lang)} & {pm(r.fpr_mean, r.fpr_sd, lang)} & "
-                             f"{fmt(r.auc_mean, lang, 3, pct=False)} \\\\")
+                             f"{pm(r.recall_mean, r.recall_sd, lang)} & {pm(r.fpr_mean, r.fpr_sd, lang)} & "
+                             f"{pm(r.auc_mean, r.auc_sd, lang, pct=False, digits=3)} \\\\")
         out[lang] = "\n".join(lines) + "\n"
     write("tab_real.tex", out)
 

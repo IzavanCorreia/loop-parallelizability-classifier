@@ -67,12 +67,12 @@
 
   % 3. real-world loops (x 8.71 to 12.98)
   \draw[panel, draw=accent, fill=accentfill] (8.71, 0.02) rectangle (12.98, 4.98);
-  \node[title] at (10.85, 4.5) {340 real-world loops};
+  \node[title] at (10.85, 4.5) {Human-written loops};
   \node[head] at (11.3, 4.0) {Accuracy};
   \node[head] at (12.4, 4.0) {FPR};
   \node[group] at (8.9, 3.65) {trained on synthetic pairs};
   \row{3.32}{txt}{DistilBERT}{\synRealAcc}{\synRealFpr}{\fs{8}}
-  \node[group] at (8.9, 2.97) {trained on real loops};
+  \node[group] at (8.9, 2.97) {trained on human-written loops};
   \row{2.64}{name}{DistilBERT}{\realBertAcc}{\realBertFpr}{\fs{8}\bfseries}
   \row{2.31}{txt}{N-gram LR}{\realNgAcc}{\realNgFpr}{\fs{8}}
   \draw[boxedge, line width=0.4pt] (8.9, 2.08) -- (12.8, 2.08);

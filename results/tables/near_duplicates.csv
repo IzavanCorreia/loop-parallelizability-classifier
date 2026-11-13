@@ -1,0 +1,2 @@
+loops,groups,groups_with_duplicates,loops_with_duplicate,loops_without_duplicate,largest_group,mixed_class_groups,distilbert_acc_dup,distilbert_fpr_dup,distilbert_acc_single,distilbert_fpr_single,ngram_acc_dup,ngram_fpr_dup,ngram_acc_single,ngram_fpr_single
+340,308,23,55,285,7,0,0.9696969696969697,0.030303030303030304,0.9052631578947369,0.07511737089201878,0.9393939393939394,0.06060606060606061,0.8269005847953217,0.2347417840375587

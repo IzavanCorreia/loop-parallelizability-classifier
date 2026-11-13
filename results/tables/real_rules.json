@@ -1,0 +1,32 @@
+[
+  {
+    "rule": "has '+=' -> Undefined",
+    "accuracy": 0.7088235294117647,
+    "fpr": 0.6036585365853658
+  },
+  {
+    "rule": "has 'while' -> Undefined",
+    "accuracy": 0.5264705882352941,
+    "fpr": 0.9817073170731707
+  },
+  {
+    "rule": "has 'break' -> Undefined",
+    "accuracy": 0.5176470588235295,
+    "fpr": 0.9817073170731707
+  },
+  {
+    "rule": "has '+=', 'while' or 'break' -> Undefined",
+    "accuracy": 0.711764705882353,
+    "fpr": 0.5792682926829268
+  },
+  {
+    "rule": "longer than median -> Undefined",
+    "accuracy": 0.711764705882353,
+    "fpr": 0.2865853658536585
+  },
+  {
+    "rule": "not a comprehension -> Undefined",
+    "accuracy": 0.6,
+    "fpr": 0.0
+  }
+]

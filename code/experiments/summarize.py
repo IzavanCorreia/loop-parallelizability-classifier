@@ -318,6 +318,8 @@ def protocol_sizes():
                      "real_test_mean": np.mean(real_test),
                      "real_share_train": np.mean(np.array(real_tr) / np.array(n_tr)),
                      "val_neg_mean": np.mean([(r["val_y"] == 0).sum() for r in runs])})
+        real_neg = [int(((r["test_y"] == 0) & np.char.startswith(r["test_ids"].astype(str), "real-")).sum()) for r in runs]
+        rows[-1].update({"real_test_neg_min": min(real_neg), "real_test_neg_max": max(real_neg)})
     return pd.DataFrame(rows)
 
 
