@@ -45,9 +45,8 @@ data and code of an earlier version of this work, posted on arXiv (https://arxiv
   - A dynamic dependence oracle executes every loop and confirms its label.
   - A genetic algorithm (DEAP) with fitness sharing is the search mechanism over the genomes; random sampling of
     the same number of genomes gives an equivalent set.
-- **Human-written data.** 340 short Python snippets collected one by one from public repositories, complemented
-  by examples written by the first author, processed and evaluated by the researchers, and checked by the same
-  oracle. The set extends the 338 loops of the previous study (170 Parallelizable and 168 Undefined) with two
+- **Human-written data.** 340 short Python snippets collected one by one from public repositories, processed
+  and evaluated by the researchers, and checked by the same oracle. The set extends the 338 loops of the previous study (170 Parallelizable and 168 Undefined) with two
   Undefined loops.
 - **Models.**
   - DistilBERT (fine-tuned on the source text);
